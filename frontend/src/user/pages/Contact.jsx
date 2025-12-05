@@ -25,7 +25,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/contact/submit', formData);
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contact/submit`, formData);
       toast.success('Your query has been sent successfully! We will contact you soon.', {
         icon: 'Success',
         duration: 5000,

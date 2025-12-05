@@ -12,7 +12,7 @@ const Dashboard = () => {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/admin/stats', {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/stats`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

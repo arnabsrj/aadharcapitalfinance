@@ -20,7 +20,7 @@ const Customers = () => {
   const fetchCustomers = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/user/loan/customers', {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/loan/customers`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCustomers(res.data.customers || []);

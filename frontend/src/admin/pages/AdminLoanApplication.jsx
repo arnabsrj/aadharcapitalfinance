@@ -41,7 +41,7 @@ const AdminLoanApplications = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/admin/loans', {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/loans`, {
         headers: { Authorization: `Bearer ${token}` },
         params: { page: currentPage, limit: itemsPerPage, search }
       });
@@ -71,7 +71,7 @@ const AdminLoanApplications = () => {
   const exportCSV = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/admin/loans/export/csv', {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/loans/export/csv`, {
         headers: { Authorization: `Bearer ${token}` },
         responseType: 'blob'
       });

@@ -228,7 +228,7 @@ const handleSubmit = async () => {
 
   try {
     const response = await axios.post(
-      '${import.meta.env.VITE_BACKEND_URL}/api/user/loan/apply',
+      `${import.meta.env.VITE_BACKEND_URL}/api/user/loan/apply`,
       formDataToSend,
       {
         headers: { 'Content-Type': 'multipart/form-data' },
