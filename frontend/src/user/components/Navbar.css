@@ -81,6 +81,58 @@
   border-radius: 2px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 24px;
+  color: #40513B;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.logo-img {
+  height: 48px;           /* Mobile pe perfect */
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;     /* Optional: thoda round look */
+  box-shadow: 0 4px 15px rgba(64,81,59,0.2);
+}
+
+.logo-text {
+  color: #40513B;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Desktop pe thoda bada */
+@media (min-width: 768px) {
+  .logo-img {
+    height: 56px;
+  }
+  
+  .logo {
+    font-size: 28px;
+  }
+}
+
+/* Agar sirf logo image chahiye (text hide on mobile) */
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;  /* Mobile pe sirf logo dikhega */
+  }
+  
+  .logo-img {
+    height: 44px;
+  }
+}
+
 /* Apply Button */
 .apply-btn {
   background: #9DC08B;
