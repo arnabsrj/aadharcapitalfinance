@@ -27,7 +27,12 @@ console.log("=== SERVER FILE STARTED ===");
 app.use(cors({
   origin: [
     "http://localhost:5173", // your local frontend port (Vite)
-    "https://aadharcapitalfinance.vercel.app"
+    "https://aadharcapitalfinance.vercel.app",
+    "https://www.aadharcapitalfinance.com", 
+    "https://aadharcapitalfinance.com",
+    "http://localhost:5173",
+    "http://localhost:5000"
+    
   ],
   credentials: true,
 }));

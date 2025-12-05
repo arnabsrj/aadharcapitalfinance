@@ -50,12 +50,12 @@ export const applyLoan = async (req, res) => {
     const applicationId = application._id.toString();
 
     // Send Email
-    try {
-      await sendConfirmationEmail(email, fullName, applicationId);
-      console.log(`Email sent to ${email}`);
-    } catch (err) {
-      console.log("Email failed but application saved:", err.message);
-    }
+    // try {
+    //   await sendConfirmationEmail(email, fullName, applicationId);
+    //   console.log(`Email sent to ${email}`);
+    // } catch (err) {
+    //   console.log("Email failed but application saved:", err.message);
+    // }
 
     res.status(201).json({
       success: true,
