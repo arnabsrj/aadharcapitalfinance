@@ -33,7 +33,7 @@ const ApplicationDetails = () => {
   const loadApplication = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get(`http://localhost:5000/api/admin/loans/${id}`, {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/loans/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setData(res.data);
@@ -57,7 +57,7 @@ const ApplicationDetails = () => {
 
   try {
     const token = localStorage.getItem('adminToken');
-    await axios.post(`http://localhost:5000/api/admin/loans/${id}/upload-user-doc`, formData, {
+    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/admin/loans/${id}/upload-user-doc`, formData, {
       headers: { Authorization: `Bearer ${token}` }
     });
     toast.success(`${type.replace('_', ' ')} uploaded!`);
@@ -71,7 +71,7 @@ const ApplicationDetails = () => {
   const saveAllChanges = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      await axios.put(`http://localhost:5000/api/admin/loans/${id}`, 
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/admin/loans/${id}`, 
         { 
           ...editedData, 
           status, 
@@ -357,7 +357,7 @@ e.target.src = "https://via.placeholder.com/300x400/eee/999?text=Image+Not+Found
         <button
           onClick={async () => {
             const token = localStorage.getItem('adminToken');
-            await axios.put(`http://localhost:5000/api/admin/loans/${id}/toggle-doc`, 
+            await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/admin/loans/${id}/toggle-doc`, 
               { docType: key, visible: !data.userVisibleDocs?.[key] },
               { headers: { Authorization: `Bearer ${token}` } }
             );

@@ -228,7 +228,7 @@ const handleSubmit = async () => {
 
   try {
     const response = await axios.post(
-      'http://localhost:5000/api/user/loan/apply',
+      '${import.meta.env.VITE_BACKEND_URL}/api/user/loan/apply',
       formDataToSend,
       {
         headers: { 'Content-Type': 'multipart/form-data' },
@@ -249,7 +249,7 @@ const handleSubmit = async () => {
     });
     // EMAIL BHEJNE KA CALL
 // try {
-//   await axios.post('http://localhost:5000/api/user/send-confirmation-email', {
+//   await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/user/send-confirmation-email', {
 //     email: formData.email,
 //     fullName: formData.fullName,
 //     applicationId: appId

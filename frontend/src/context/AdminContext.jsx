@@ -23,7 +23,7 @@ export const AdminProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/admin/login', {
+      const res = await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/admin/login', {
         email,
         password,
       });

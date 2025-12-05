@@ -25,7 +25,7 @@ const TrackApplication = () => {
 
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/user/loan/track/${searchInput.trim()}`);
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/loan/track/${searchInput.trim()}`);
       setApplication(res.data.application);
       toast.success('Application found successfully!', {
         icon: <CheckCircle size={24} color="#9DC08B" />,

@@ -18,7 +18,7 @@ const ContactQueries = () => {
   const fetchQueries = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get('http://localhost:5000/api/contact/queries', {
+      const res = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/contact/queries', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQueries(res.data.queries);
@@ -32,7 +32,7 @@ const ContactQueries = () => {
   const updateStatus = async (id, status) => {
     try {
       const token = localStorage.getItem('adminToken');
-      await axios.put(`http://localhost:5000/api/contact/queries/${id}`, { status }, {
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/contact/queries/${id}`, { status }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success('Status updated!');
@@ -47,7 +47,7 @@ const ContactQueries = () => {
 
     try {
       const token = localStorage.getItem('adminToken');
-      await axios.delete(`http://localhost:5000/api/contact/queries/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/contact/queries/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success('Query deleted successfully!');
