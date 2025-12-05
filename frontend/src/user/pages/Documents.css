@@ -1,0 +1,190 @@
+/* DOCUMENTS & ELIGIBILITY – CLEAN & PROFESSIONAL */
+.docs-hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 140px 0 100px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.docs-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.docs-hero p {
+  font-size: 1.4rem;
+  opacity: 0.95;
+}
+
+.eligibility-section, .terms-section, .documents-section {
+  padding: 100px 0;
+  background: var(--light);
+}
+
+.eligibility-section h2, .terms-section h2, .documents-section h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 3rem;
+}
+
+.eligibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eligibility-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.eligibility-card svg {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.eligibility-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.terms-table {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.table-header {
+  background: var(--primary);
+  color: white;
+  padding: 1.5rem;
+  font-weight: 700;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.table-row:last-child { border-bottom: none; }
+
+.table-row span:first-child {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.table-row strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.doc-category {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.doc-category h3 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.doc-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doc-category li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.docs-cta {
+  padding: 100px 0;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+}
+
+.cta-card {
+  background: rgba(255,255,255,0.1);
+  padding: 3rem;
+  border-radius: var(--radius);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-card h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-outline{
+  margin: 0 0 0 0 !important;
+}
+
+.grievance-section {
+  padding: 100px 0;
+  background: var(--light);
+  text-align: center;
+}
+
+.grievance-section h2 {
+  font-size: 2.6rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.grievance-section p {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .eligibility-grid, .docs-grid { grid-template-columns: 1fr; }
+  .terms-table { font-size: 0.95rem; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+}

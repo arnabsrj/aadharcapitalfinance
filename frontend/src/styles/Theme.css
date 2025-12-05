@@ -1,0 +1,44 @@
+/* src/styles/Theme.css */
+:root {
+  --royal: #1A4DFF;
+  --teal: #0ABFBC;
+  --gold: #F9C80E;
+  --navy: #0D1B2A;
+  --offwhite: #F5F7FA;
+  --white: #FFFFFF;
+}
+
+body {
+  background: var(--offwhite);
+  color: var(--navy);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--royal);
+  color: white;
+  border: none;
+  padding: 1rem 2.4rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(26, 77, 255, 0.25);
+}
+.btn-primary:hover {
+  background: #0d41e6;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(26, 77, 255, 0.35);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}
+.btn-gold:hover {
+  background: #e5b800;
+  transform: translateY(-3px);
+}

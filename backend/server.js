@@ -1,0 +1,52 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
+console.log("RESEND KEY:", process.env.RESEND_API_KEY);
+
+
+
+import { configureCloudinary } from './utils/cloudinary.js';
+configureCloudinary();
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+
+// Import routes
+import userAuthRoutes from './routes/user/authRoutes.js';
+import adminAuthRoutes from './routes/admin/authRoutes.js';
+import adminLoanRoutes from './routes/admin/loanRoutes.js';
+import userLoanRoutes from './routes/user/loanRoutes.js';
+import contactRoutes from './routes/user/contactRoutes.js';
+
+const app = express();
+
+console.log("=== SERVER FILE STARTED ===");
+
+
+// Middleware
+app.use(cors());
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+
+// Mount routes
+app.use('/api/user', userAuthRoutes);
+app.use('/api/admin', adminAuthRoutes);
+
+app.use('/api/user/loan', userLoanRoutes);
+app.use('/api/admin', adminLoanRoutes);
+
+app.use('/api/contact', contactRoutes);
+
+app.get('/', (req, res) => {
+  res.send('<h1>Loan Management System Backend is LIVE!</h1><p>Use Postman to test:</p><ul><li>POST /api/user/register</li><li>POST /api/user/login</li><li>POST /api/admin/login</li></ul>');
+});
+
+// DB Connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB Connected Successfully'))
+  .catch(err => console.log('MongoDB Error:', err));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});

@@ -1,0 +1,314 @@
+/* src/admin/styles/LoanApplications.css - 100% WORKING + MOBILE-FIRST + BLUE THEME */
+
+.loan-apps-container {
+  padding: 20px;
+  background: #f8faff;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* { box-sizing: border-box; }
+
+/* Header */
+.apps-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+  align-items: stretch;
+}
+
+.apps-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin: 0;
+  text-align: center;
+}
+
+.apps-header p {
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
+  margin: 4px 0 0;
+}
+
+.export-btn-pro {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(59,130,246,0.3);
+  transition: all 0.3s;
+  align-self: center;
+}
+
+.export-btn-pro:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(59,130,246,0.4);
+}
+
+/* Search */
+.search-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 16px 50px 16px 20px;
+  border: 2px solid #e0e7ff;
+  border-radius: 16px;
+  font-size: 16px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(59,130,246,0.08);
+  transition: all 0.3s;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 6px rgba(59,130,246,0.2);
+}
+
+.search-container svg {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+/* Desktop Table */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(30,64,175,0.1);
+  background: white;
+  margin-bottom: 30px;
+}
+
+.applications-table-pro {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.applications-table-pro th {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  padding: 20px 16px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.app-row:hover {
+  background: #f0f9ff !important;
+}
+
+.app-row td {
+  padding: 18px 16px;
+  border-bottom: 1px solid #e0e7ff;
+  vertical-align: top;
+}
+
+.app-id {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: #1e40af;
+  font-size: 15px;
+}
+
+.applicant-info strong { font-size: 16px; color: #1e293b; }
+.applicant-info small { display: block; color: #64748b; margin-top: 4px; }
+
+.contact-info span { font-size: 14px; color: #64748b; }
+
+/* Status Badge */
+.status-badge-pro {
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.bg-yellow-100 { background: #fef3c7 !important; }
+.text-yellow-800 { color: #92400e !important; }
+.bg-blue-100 { background: #dbeafe !important; }
+.text-blue-800 { color: #1e40af !important; }
+.bg-green-100 { background: #d1fae5 !important; }
+.text-green-800 { color: #065f46 !important; }
+.bg-red-100 { background: #fee2e2 !important; }
+.text-red-800 { color: #991b1b !important; }
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.action-btn.view {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.action-btn.view:hover {
+  background: #3b82f6;
+  color: white;
+  transform: scale(1.12);
+}
+
+.action-btn.delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.action-btn.delete:hover {
+  background: #ef4444;
+  color: white;
+  transform: scale(1.12);
+}
+
+/* Mobile Cards */
+.mobile-cards {
+  display: none;
+  gap: 18px;
+  flex-direction: column;
+}
+
+.mobile-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(30,64,175,0.1);
+  border: 1px solid #e0e7ff;
+}
+
+.mobile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.mobile-id {
+  font-size: 14px;
+  color: #3b82f6;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.mobile-card-body p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #475569;
+}
+
+.mobile-card-footer {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.mobile-view-btn,
+.mobile-delete-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.mobile-view-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.mobile-delete-btn {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Pagination */
+.pagination-pro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.page-btn {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border: 2px solid #e0e7ff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.page-info {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+}
+
+/* Loading & Empty */
+.loading-pro,
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #64748b;
+  font-size: 18px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 868px) {
+  .table-wrapper { display: none; }
+  .mobile-cards { display: flex; }
+  .apps-header { text-align: center; }
+}
+
+@media (min-width: 869px) {
+  .mobile-cards { display: none; }
+  .apps-header { flex-direction: row; justify-content: space-between; align-items: center; }
+  .export-btn-pro { align-self: flex-end; width: auto; }
+}

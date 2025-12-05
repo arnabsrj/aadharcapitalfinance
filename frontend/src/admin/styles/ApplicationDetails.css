@@ -1,0 +1,336 @@
+/* MOBILE-FIRST PREMIUM BLUE - ApplicationDetails.css */
+.application-detail-container {
+  padding: 16px;
+  background: #f8faff;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* Header Bar - Mobile Full Width */
+.header-bar {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: white;
+  padding: 20px 16px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.25);
+}
+
+.back-button {
+  background: rgba(255,255,255,0.25);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.back-button:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+.app-header h1 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  word-break: break-all;
+}
+
+.copy-btn {
+  margin-left: 10px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.short-id-info {
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.short-id-info strong {
+  font-size: 24px;
+  color: #fbbf24;
+}
+
+/* Section Styling - Mobile First */
+.info-section,
+.documents-section,
+.admin-section {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.08);
+  border: 1px solid #e0e7ff;
+}
+
+.info-section h2,
+.documents-section h2,
+.admin-section h2 {
+  color: #1e3a8a;
+  font-size: 19px;
+  margin: 0 0 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+/* Info Grid - Mobile 1 Column */
+.info-grid {
+  display: grid;
+  gap: 14px;
+  font-size: 15px;
+}
+
+.info-grid div {
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.info-grid div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-grid .full {
+  grid-column: 1 / -1;
+}
+
+.info-grid strong {
+  color: #1e40af;
+  display: inline-block;
+  min-width: 120px;
+}
+
+/* Documents - Mobile 1 per row */
+.documents-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.document-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e0e7ff;
+  transition: transform 0.3s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-5px);
+}
+
+.doc-preview {
+  height: 180px;
+  background: #f8faff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.doc-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pdf-icon {
+  text-align: center;
+  color: #dc2626;
+}
+
+.pdf-icon span {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.doc-label {
+  padding: 14px;
+  background: #f8faff;
+}
+
+.doc-label p {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.view-link, .download-link {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-link {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.download-link {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.view-link:hover { background: #3b82f6; color: white; }
+.download-link:hover { background: #ef4444; color: white; }
+
+/* Admin Controls - Mobile Friendly */
+.admin-controls {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-controls label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #1e3a8a;
+  font-size: 15px;
+}
+
+.admin-controls select,
+.admin-controls textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e0e7ff;
+  border-radius: 12px;
+  font-size: 15px;
+  background: white;
+}
+
+.save-button {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.save-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
+}
+
+/* Fullscreen Modal - Mobile Friendly */
+.fullscreen-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 10px;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 95vw;
+  max-height: 95vh;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.modal-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content img,
+.modal-content embed {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.floating-download {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #3b82f6;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Desktop Enhancements */
+@media (min-width: 768px) {
+  .application-detail-container { padding: 32px; }
+  .header-bar { padding: 28px 32px; }
+  .app-header h1 { font-size: 26px; }
+  .info-grid { grid-template-columns: repeat(2, 1fr); }
+  .documents-grid { grid-template-columns: repeat(3, 1fr); }
+  .info-section,
+  .documents-section,
+  .admin-section { padding: 28px; }
+}
+
+@media (min-width: 1024px) {
+  .info-grid { grid-template-columns: repeat(3, 1fr); }
+  .documents-grid { grid-template-columns: repeat(4, 1fr); }
+}

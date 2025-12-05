@@ -1,0 +1,241 @@
+/* src/admin/styles/AdminLayout.css → 2025 PREMIUM EDITION */
+
+.admin-layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  background: #0f172a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* ========== SIDEBAR – GLASSMORPHISM + GLOW ========== */
+.admin-sidebar {
+  width: 300px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 10px 0 40px rgba(0,0,0,0.4);
+  z-index: 100;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Floating Glow Effect */
+.admin-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), transparent 50%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sidebar-header {
+  padding: 40px 28px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-logo {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 
+    0 20px 40px rgba(251,191,36,0.4),
+    inset 0 -10px 20px rgba(0,0,0,0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.sidebar-title {
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #fbbf24, #fcd34d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.admin-name {
+  background: linear-gradient(135deg, rgba(251,191,36,0.3), rgba(251,191,36,0.1));
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(251,191,36,0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* ========== MENU ITEMS – SMOOTH HOVER + ACTIVE GLOW ========== */
+.sidebar-menu {
+  flex: 1;
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 32px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: #fbbf24;
+  transition: width 0.4s ease;
+}
+
+.menu-item:hover {
+  color: white;
+  background: rgba(251,191,36,0.15);
+  padding-left: 42px;
+  transform: translateX(8px);
+}
+
+.menu-item:hover::before {
+  width: 6px;
+}
+
+.menu-item.active {
+  background: linear-gradient(90deg, rgba(251,191,36,0.25), transparent);
+  color: #fbbf24;
+  font-weight: 800;
+  box-shadow: inset 6px 0 0 #fbbf24;
+}
+
+/* ========== LOGOUT BUTTON – DANGER GLOW ========== */
+.logout-section {
+  padding: 24px 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(239,68,68,0.3), rgba(220,38,38,0.2));
+  color: #fca5a5;
+  border: 1px solid rgba(239,68,68,0.4);
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(239,68,68,0.4);
+}
+
+/* ========== MAIN CONTENT – CLEAN & ELEGANT ========== */
+.main-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.top-header {
+  background: white;
+  padding: 40px 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 6px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+}
+
+.top-header h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #1e293b, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.top-header p {
+  color: #64748b;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.page-content {
+  flex: 1;
+  padding: 50px;
+  background: #f8fafc;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== RESPONSIVE – STILL GORGEOUS ON MOBILE ========== */
+@media (max-width: 992px) {
+  .admin-sidebar { width: 280px; }
+  .page-content { padding: 30px; }
+}
+
+@media (max-width: 768px) {
+  .admin-layout-wrapper { flex-direction: column; }
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .sidebar-header { padding: 30px 20px; }
+  .top-header { padding: 30px 20px; }
+}
