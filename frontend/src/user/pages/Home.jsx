@@ -209,7 +209,7 @@ const coreServices = [
   <div className="hero-overlay" style={{
     position: 'absolute',
     inset: 0,
-    background: 'linear-gradient(135deg, rgba(64,81,59,0.48), rgba(96,153,102,0.48))',
+    background: 'linear-gradient(135deg, rgba(64,81,59,0.38), rgba(96,153,102,0.38))',
     zIndex: 1
   }} />
 
@@ -219,7 +219,7 @@ const coreServices = [
       initial={{ opacity: 0, y: 30 }} 
       whileInView={{ opacity: 1, y: 0 }} 
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.4 }}
       style={{ position: 'relative', zIndex: 2 }}  // ← Text sabse upar
     >
       <div className="tagline">An RBI Registered NBFC</div>

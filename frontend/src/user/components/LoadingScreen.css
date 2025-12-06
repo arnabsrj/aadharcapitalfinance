@@ -1,0 +1,132 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #40513B, #609966);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-content {
+  text-align: center;
+  color: white;
+}
+
+.logo-acp {
+  font-size: 9rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #9DC08B;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.logo-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em; /* thoda kam kiya taaki fit ho */
+  color: white;
+  text-transform: uppercase;
+  white-space: normal;   /* ← YE CHANGE KAR DE (nowrap hata diya) */
+  overflow: visible;     /* ← YE BHI */
+  word-break: break-word; /* long text break ho jayega if needed */
+  max-width: 90vw;       /* screen ke andar rahega */
+  padding: 0 1rem;       /* side se space */
+  line-height: 1.3;
+}
+
+.loader-bar {
+  width: 300px;
+  height: 4px;
+  background: rgba(157,192,139,0.3);
+  margin: 40px auto 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background: #9DC08B;
+  width: 100%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .logo-acp {
+    font-size: 6rem;
+  }
+
+  .logo-text {
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  .loader-bar {
+    width: 80%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-acp {
+    font-size: 5rem;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .logo-acp {
+    font-size: 5.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    max-width: 95vw;
+    padding: 0 1.5rem;
+  }
+
+  .loader-bar {
+    width: 85%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-acp {
+    font-size: 4.5rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 1.4rem;
+    /* letter-spacing: 0.08em; */
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}

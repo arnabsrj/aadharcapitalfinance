@@ -1,5 +1,7 @@
 // src/user/pages/TrackApplication.jsx
 import { useState } from 'react';
+import { motion } from "framer-motion";
+
 import axios from 'axios';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -510,7 +512,7 @@ const TrackApplication = () => {
   return (
     <>
       {/* HERO SECTION - EXACT SAME AS ABOUT PAGE */}
-      <section className="track-hero">
+      {/* <section className="track-hero">
         <div className="hero-overlay" />
         <div className="container">
           <div className="hero-content">
@@ -519,7 +521,46 @@ const TrackApplication = () => {
             <p>Enter your <strong>Application ID</strong> or <strong>Phone Number</strong> to view live status</p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+
+<section className="track-hero">
+  {/* Background Image */}
+  <div className="hero-bg-image" style={{
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'url("https://images.pexels.com/photos/7947998/pexels-photo-7947998.jpeg")',  // ← TERA IMAGE PATH
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0
+  }} />
+
+  {/* Light Green Overlay */}
+  <div className="hero-overlay" style={{
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(135deg, rgba(64,81,59,0.38), rgba(96,153,102,0.32))',
+    zIndex: 1
+  }} />
+
+  <div className="container">
+    <motion.div 
+      className="hero-content"
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}
+    >
+      <span className="tagline">Real-Time Application Tracking</span>
+      <h1>Track Your Loan Application</h1>
+      <p>Enter your <strong>Application ID</strong> or <strong>Phone Number</strong> to view live status</p>
+    </motion.div>
+  </div>
+</section>
+
+
 
       {/* MAIN CONTENT */}
       <section className="track-section">
