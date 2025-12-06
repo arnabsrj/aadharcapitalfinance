@@ -68,7 +68,7 @@ const About = () => {
     
 
       {/* Hero – Starts from Top */}
-   <section className="about-hero">
+   <section className="about-hero mobile-hero-short">
   {/* Background Image */}
   <div className="hero-bg-image" style={{
     position: 'absolute',
