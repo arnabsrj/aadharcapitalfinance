@@ -183,3 +183,36 @@
   .emi-super { font-size: 3.5rem; }
   .trust-badges { gap: 1rem; flex-direction: column; align-items: center; }
 }
+
+
+
+
+.emi-hero-compact {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .emi-hero-compact {
+    min-height: 60vh;
+    padding: 100px 20px 60px;
+  }
+  
+  .emi-hero-compact h1 {
+    font-size: 2.6rem;
+  }
+  
+  .emi-hero-compact p {
+    font-size: 1.15rem;
+  }
+  
+  .tag {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem;
+  }
+}

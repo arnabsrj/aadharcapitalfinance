@@ -293,11 +293,11 @@ const handleSubmit = async () => {
             <div className="form-grid">
               <div className="form-group">
                 <label>Full Name *</label>
-                <input name="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="John Doe" />
+                <input name="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Your Name" />
               </div>
               <div className="form-group">
                 <label>Father's Name</label>
-                <input name="fatherName" value={formData.fatherName} onChange={handleInputChange} placeholder="Robert Doe" />
+                <input name="fatherName" value={formData.fatherName} onChange={handleInputChange} placeholder="Father's Name" />
               </div>
               <div className="form-group">
                 <label>Phone *</label>
@@ -316,7 +316,7 @@ const handleSubmit = async () => {
               </div>
               <div className="form-group">
                 <label>Email *</label>
-                <input name="email" value={formData.email} onChange={handleInputChange} type="email" placeholder="john@example.com" />
+                <input name="email" value={formData.email} onChange={handleInputChange} type="email" placeholder="loan@gmail.com" />
               </div>
               <div className="form-group">
                 <label>Gender *</label>
@@ -342,11 +342,11 @@ const handleSubmit = async () => {
               </div>
               <div className="form-group full">
                 <label>Permanent Address *</label>
-                <textarea name="permanentAddress" value={formData.permanentAddress} onChange={handleInputChange} placeholder="123 Main St, Mumbai" />
+                <textarea name="permanentAddress" value={formData.permanentAddress} onChange={handleInputChange} placeholder="123 Main St, Haryana" />
               </div>
               <div className="form-group full">
                 <label>Current Address</label>
-                <textarea name="currentAddress" value={formData.currentAddress} onChange={handleInputChange} placeholder="456 Park Ave, Mumbai" />
+                <textarea name="currentAddress" value={formData.currentAddress} onChange={handleInputChange} placeholder="456 Park Ave, Haryana" />
               </div>
             </div>
           </div>
@@ -522,71 +522,184 @@ case 5: // Documents
         );
       case 7: // Success
         return (
-      <div className="success-step">
-          <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring' }}>
-            <CheckCircle size={80} className="success-icon" />
-          </motion.div>
-          <h2>Application Submitted Successfully!</h2>
-          {/* <p className="app-id">Application ID: <strong>{applicationId}</strong></p> */}
+   <div className="success-step" style={{
+  minHeight: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '16px',
+  background: 'linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)',
+  textAlign: 'center',
+  boxSizing: 'border-box'
+}}>
+  <div style={{
+    maxWidth: '100%',
+    width: '100%',
+    background: 'white',
+    padding: '32px 20px',  // Mobile pe kam padding
+    borderRadius: '20px',
+    boxShadow: '0 15px 40px rgba(0,0,0,0.12)',
+    border: '1px solid #e0e7ff',
+    boxSizing: 'border-box'
+  }}>
+    {/* Success Icon */}
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+    >
+      <CheckCircle size={64} style={{ color: '#10b981', margin: '0 auto 16px' }} /> {/* Mobile pe chhota icon */}
+    </motion.div>
 
-           <div className="app-id-section">
-  <div className="app-id-full">
-    <span>Application ID:</span>
-    <strong>{applicationId}</strong>
-    <button
-      onClick={async () => {
-        // await copyToClipboard(applicationId);
-        await navigator.clipboard.writeText(applicationId);
-   toast.success('Full Application ID copied!', {
-                icon: <Clipboard size={22} />,
-                duration: 4000,
-              });
-      }}
-      className="copy-btn"
-      title="Copy full ID"
-    >
-      Copy
-    </button>
-  </div>
-  <div className="app-id-short">
-    <small>Quick Reference ID:</small>
-    <strong style={{ fontSize: '18px', color: '#1e40af' }}>
-      {applicationId.slice(-8).toUpperCase()}
-    </strong>
-    <button
-      onClick={async () => {
-        const shortId = applicationId.slice(-8).toUpperCase();
-       await navigator.clipboard.writeText(shortId);
-              toast.success(`Short ID ${shortId} copied!`, {
-                icon: <CheckCircle size={20} color="#10b981" />,
-                duration: 4000,
-              });
-      }}
-      className="copy-btn small"
-      title="Copy short ID"
-    >
-      Copy
-    </button>
+    {/* Title */}
+    <h2 style={{
+      margin: '0 0 12px',
+      color: '#1e40af',
+      fontWeight: '900',
+      fontSize: '24px',  // Mobile pe chhota
+      lineHeight: '1.3'
+    }}>
+      Application Submitted Successfully!
+    </h2>
+
+    {/* Important Message */}
+    <div style={{
+      background: '#dbeafe',
+      border: '2px solid #3b82f6',
+      borderRadius: '14px',
+      padding: '16px',
+      margin: '24px 0',
+      color: '#1e40af',
+      fontWeight: '600',
+      fontSize: '14.5px',  // Mobile pe readable
+      lineHeight: '1.5',
+      boxShadow: '0 4px 15px rgba(59, 130, 246, 0.1)'
+    }}>
+      <AlertCircle size={22} style={{ display: 'block', margin: '0 auto 10px' }} />
+      <strong>Important:</strong> Please copy and save your Application ID below.<br />
+      You will need it to track your loan status. <strong>We recommend saving it now!</strong>
+    </div>
+
+    {/* Application ID Section */}
+    <div style={{ margin: '28px 0' }}>
+      {/* Full ID */}
+      <div style={{
+        background: '#f0f9ff',
+        padding: '18px',
+        borderRadius: '14px',
+        border: '2px solid #0ea5e9',
+        marginBottom: '18px',
+        wordBreak: 'break-all'  // Important for long ID
+      }}>
+        <span style={{ fontWeight: '600', color: '#1e40af', display: 'block', marginBottom: '6px', fontSize: '14px' }}>
+          Full Application ID:
+        </span>
+        <strong style={{ fontSize: '17px', color: '#1e40af', display: 'block', margin: '8px 0', fontFamily: 'monospace' }}>
+          {applicationId}
+        </strong>
+        <button
+          onClick={async () => {
+            await navigator.clipboard.writeText(applicationId);
+            toast.success('Full Application ID copied!', {
+              icon: <Clipboard size={20} color="#3b82f6" />,
+              duration: 4000,
+            });
+          }}
+          style={{
+            background: '#3b82f6',
+            color: 'white',
+            border: 'none',
+            padding: '10px 16px',
+            borderRadius: '10px',
+            cursor: 'pointer',
+            fontWeight: '700',
+            fontSize: '14px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            marginTop: '10px'
+          }}
+        >
+          <Clipboard size={16} /> Copy Full ID
+        </button>
+      </div>
+
+      {/* Short ID */}
+      <div style={{
+        background: '#ecfdf5',
+        padding: '18px',
+        borderRadius: '14px',
+        border: '2px solid #10b981'
+      }}>
+        <small style={{ color: '#065f46', display: 'block', marginBottom: '6px', fontSize: '13px' }}>
+          Quick Reference ID (Last 8 digits):
+        </small>
+        <strong style={{
+          fontSize: '26px',  // Mobile pe bhi clear dikhega
+          color: '#10b981',
+          display: 'block',
+          margin: '10px 0',
+          letterSpacing: '2px',
+          fontFamily: 'monospace',
+          fontWeight: '900'
+        }}>
+          {applicationId.slice(-8).toUpperCase()}
+        </strong>
+        <button
+          onClick={async () => {
+            const shortId = applicationId.slice(-8).toUpperCase();
+            await navigator.clipboard.writeText(shortId);
+            toast.success(`Short ID ${shortId} copied!`, {
+              icon: <CheckCircle size={18} color="#10b981" />,
+              duration: 4000,
+            });
+          }}
+          style={{
+            background: '#10b981',
+            color: 'white',
+            border: 'none',
+            padding: '10px 20px',
+            borderRadius: '50px',
+            cursor: 'pointer',
+            fontWeight: '700',
+            fontSize: '14px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            marginTop: '10px'
+          }}
+        >
+          <Clipboard size={16} /> Copy Short ID
+        </button>
+      </div>
+    </div>
+
+    {/* Action Button */}
+    <div style={{ marginTop: '35px' }}>
+      <button
+        onClick={() => navigate('/track')}
+        style={{
+          background: '#40513B',
+          color: 'white',
+          border: 'none',
+          padding: '16px 40px',
+          borderRadius: '50px',
+          fontSize: '17px',
+          fontWeight: '700',
+          cursor: 'pointer',
+          boxShadow: '0 8px 25px rgba(64,81,59,0.3)',
+          transition: 'all 0.3s ease',
+          width: '100%',
+          maxWidth: '320px'
+        }}
+        onMouseOver={(e) => e.target.style.transform = 'translateY(-3px)'}
+        onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+      >
+        Track Application Status
+      </button>
+    </div>
   </div>
 </div>
-
-          <div className="success-actions">
-            {/* <button onClick={generatePDF} className="btn-primary pdf-btn">
-              <Download size={20} /> Download PDF
-            </button> */}
-            {/* <a href={`https://wa.me/919876543210?text=My Loan App ID: ${applicationId}`} target="_blank" className="btn-whatsapp">
-              Share on WhatsApp
-            </a> */}
-            <button onClick={() => navigate('/track')} className="btn-outline">
-              Track Status
-            </button>
-          </div>
-
-      {/* Hidden PDF Template (not visible on screen) */}
- {/* HIDDEN PDF TEMPLATE — SAB KUCH DIKHEGA + THUMBNAILS BHI */}
-
-
-    </div>
         );
       default:
         return null;

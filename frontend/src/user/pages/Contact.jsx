@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <>
       {/* Hero Section */}
-      <motion.section className="contact-hero">
+      {/* <motion.section className="contact-hero">
         <div className="hero-overlay" />
         <div className="container">
           <motion.div className="hero-content">
@@ -61,7 +61,42 @@ const Contact = () => {
             <p>Have questions? Our team is ready to assist you 24×7</p>
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
+
+<motion.section className="contact-hero">
+  {/* Background Image */}
+  <div className="hero-bg-image" style={{
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'url("https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg")',  // ← TERA IMAGE PATH
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0
+  }} />
+
+  {/* Light Green Overlay */}
+  <div className="hero-overlay" style={{
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(135deg, rgba(64,81,59,0.38), rgba(96,153,102,0.32))',
+    zIndex: 1
+  }} />
+
+  <div className="container">
+    <motion.div 
+      className="hero-content"
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}
+    >
+      <div className="tagline">We're Here to Help</div>
+      <h1>Contact Aadhar Capital Finance</h1>
+      <p>Have questions? Our team is ready to assist you 24×7</p>
+    </motion.div>
+  </div>
+</motion.section>
 
       {/* Premium Contact Form */}
       <section className="contact-section">
@@ -96,7 +131,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your@email.com"
+                    placeholder="loan@gmail.com"
                     required
                   />
                 </div>
@@ -111,7 +146,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="9876543210"
+                    placeholder="1234567890"
                     required
                   />
                 </div>
@@ -173,7 +208,7 @@ const Contact = () => {
             <div className="info-card">
               <div className="icon-circle"><MapPin size={38} /></div>
               <h3>Head Office</h3>
-              <p>Mumbai, Maharashtra, India</p>
+              <p>Haryana, Maharashtra, India</p>
             </div>
           </div>
         </div>

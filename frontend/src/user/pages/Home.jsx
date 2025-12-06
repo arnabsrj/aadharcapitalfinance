@@ -170,7 +170,7 @@ const coreServices = [
     
 
       {/* Hero Section */}
-      <section className="hero">
+      {/* <section className="hero">
         <div className="hero-overlay" />
         <div className="container">
           <motion.div className="hero-content" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -190,7 +190,61 @@ const coreServices = [
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
+
+
+      <section className="hero">
+  {/* YE IMAGE BACKGROUND ADD KAR DIYA */}
+  <div className="hero-bg-image" style={{
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'url("https://images.pexels.com/photos/7731323/pexels-photo-7731323.jpeg")',  // ← YAHAN TERA IMAGE PATH
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0
+  }} />
+
+  {/* Dark Green Overlay — Text clear dikhega */}
+  <div className="hero-overlay" style={{
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(135deg, rgba(64,81,59,0.48), rgba(96,153,102,0.48))',
+    zIndex: 1
+  }} />
+
+  <div className="container">
+    <motion.div 
+      className="hero-content" 
+      initial={{ opacity: 0, y: 30 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      style={{ position: 'relative', zIndex: 2 }}  // ← Text sabse upar
+    >
+      <div className="tagline">An RBI Registered NBFC</div>
+      <h1>Aadhar Capital | Apply For Personal Loan Upto ₹10 Lakh</h1>
+      <p className="subtitle">
+        Reliable Loan Solutions — Personal, Business, Gold, Home & More.<br />
+        Quick Approval • Minimal Documents • Funds in 24 Hours
+      </p>
+      <div className="hero-cta">
+        <button 
+          className="btn-primary" 
+          onClick={() => navigate('/apply')}
+        >
+          Apply Now <ArrowRight size={20} />
+        </button>
+        <a href="/track" className="btn-secondary">
+          <SearchIcon size={20} /> Track Now
+        </a>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+
 
       {/* Services */}
 {/* Services – FIXED & BEAUTIFUL */}
@@ -250,7 +304,7 @@ const coreServices = [
           <div className="who-content">
             <motion.div className="who-text" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2>Aadhar Capital Finance – Your Smart Financial Partner</h2>
-              <p>Based in Mumbai since 1998, we deliver simple, transparent, and fast loan solutions for every need.</p>
+              <p>Based in Haryana since 1998, we deliver simple, transparent, and fast loan solutions for every need.</p>
               <ul className="features-list">
                 <li><Check size={16} /> Trusted & RBI Registered</li>
                 <li><Check size={16} /> 100% Digital Process</li>
@@ -347,7 +401,7 @@ const coreServices = [
 </button>
 
         <a 
-          href="https://wa.me/919876543210?text=Hi! I want to apply for a loan"
+          href="https://wa.me/916207373101?text=Hi! I want to apply for a loan"
           target="_blank" 
           rel="noopener noreferrer"
           className="btn-whatsapp"

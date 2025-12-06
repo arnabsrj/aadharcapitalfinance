@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Lightbulb, PiggyBank, Headphones } from 'lucide-react';
+import { Lightbulb, PiggyBank, Headphones, ArrowRight, SearchIcon } from 'lucide-react';
 import { Shield, Award, Users, Target, HeartHandshake, Building2, CheckCircle, Quote } from 'lucide-react';
 import './About.css';
 
@@ -65,26 +65,54 @@ const About = () => {
     
 
       {/* Hero – Starts from Top */}
-      <motion.section 
-        className="about-hero"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="hero-overlay" />
-        <div className="container">
-          <motion.div 
-            className="hero-content"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="tagline">An RBI Registered NBFC</div>
-            <h1>About Aadhar Capital Finance</h1>
-            <p>27 years of expert loan and finance services. At Aadhar Capital, based in Mumbai and serving clients since 1998, we believe everyone deserves access to simple, safe, and transparent financial solutions.</p>
-          </motion.div>
-        </div>
-      </motion.section>
+   <section className="about-hero">
+  {/* Background Image */}
+  <div className="hero-bg-image" style={{
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'url("https://images.pexels.com/photos/8293768/pexels-photo-8293768.jpeg")',  // ← TERA IMAGE PATH
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0
+  }} />
+
+  {/* Light Green Overlay — Image clear dikhega, text readable */}
+  <div className="hero-overlay" style={{
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(135deg, rgba(64,81,59,0.38), rgba(96,153,102,0.38))',
+    zIndex: 1
+  }} />
+
+  <div className="container">
+    <motion.div 
+      className="hero-content" 
+      initial={{ opacity: 0, y: 30 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}
+    >
+      <div className="tagline">Trusted by Thousands</div>
+      <h1>About Aadhar Capital Finance</h1>
+      <p className="subtitle">
+        Your reliable financial partner since 1998 — Delivering transparent, fast, and affordable loan solutions across India
+      </p>
+      <div className="hero-cta">
+        <button 
+          className="btn-primary" 
+          onClick={() => navigate('/apply')}
+        >
+          Apply for Loan <ArrowRight size={20} />
+        </button>
+        <a href="/track" className="btn-secondary">
+          <SearchIcon size={20} /> Track Application
+        </a>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Company Overview – ULTIMATE PROFESSIONAL & CLEAN */}
       <section className="overview-section ultimate">
@@ -123,7 +151,7 @@ const About = () => {
                   Aadhar Capital Finance Private Limited is a <strong>Reserve Bank of India registered NBFC</strong> (Reg. No. B-14.02876) dedicated to financial inclusion through ethical, digital-first lending.
                 </p>
                 <p>
-                  Headquartered in Mumbai, we offer a complete range of retail and business loans — Personal, Business, Home, Education, and Gold Loans — with instant approvals, minimal documentation, and competitive interest rates.
+                  Headquartered in Haryana, we offer a complete range of retail and business loans — Personal, Business, Home, Education, and Gold Loans — with instant approvals, minimal documentation, and competitive interest rates.
                 </p>
               </div>
 
@@ -162,7 +190,7 @@ const About = () => {
                 <div className="card-header">
                   <Building2 size={64} />
                   <div className="location">
-                    <span className="city">Mumbai, India</span>
+                    <span className="city">Haryana, India</span>
                     <span className="tagline">Corporate Headquarters</span>
                   </div>
                 </div>

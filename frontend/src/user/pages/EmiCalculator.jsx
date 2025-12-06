@@ -38,7 +38,7 @@ const EmiCalculator = () => {
     <>
 
       {/* Hero – Full Width, Bold & Clean */}
-      <section className="emi-hero-compact">
+      {/* <section className="emi-hero-compact">
         <div className="container">
           <motion.div className="hero-inner" initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
             <span className="tag">RBI Registered NBFC</span>
@@ -47,6 +47,45 @@ const EmiCalculator = () => {
           </motion.div>
         </div>
       </section>
+ */}
+
+
+{/* Hero – Full Width with Image Background */}
+<section className="emi-hero-compact">
+  {/* Background Image */}
+  <div className="hero-bg-image" style={{
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'url("https://images.pexels.com/photos/16827970/pexels-photo-16827970.jpeg")',  // ← TERA IMAGE PATH
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0
+  }} />
+
+  {/* Light Green Overlay */}
+  <div className="hero-overlay" style={{
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(135deg, rgba(64,81,59,0.38), rgba(96,153,102,0.32))',
+    zIndex: 1
+  }} />
+
+  <div className="container">
+    <motion.div 
+      className="hero-inner" 
+      initial={{ y: 30, opacity: 0 }} 
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}
+    >
+      <span className="tag">RBI Registered NBFC</span>
+      <h1>EMI Calculator</h1>
+      <p>Instant, accurate & 100% free • Personal • Business • Home • Gold Loans</p>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Main Calculator – One Clean Card */}
       <section className="emi-main-section">

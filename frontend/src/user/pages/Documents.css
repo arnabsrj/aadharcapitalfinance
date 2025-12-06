@@ -8,13 +8,13 @@
 }
 
 .docs-hero h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
   margin-bottom: 1rem;
 }
 
 .docs-hero p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   opacity: 0.95;
 }
 
@@ -187,4 +187,30 @@
   .eligibility-grid, .docs-grid { grid-template-columns: 1fr; }
   .terms-table { font-size: 0.95rem; }
   .cta-buttons { flex-direction: column; align-items: center; }
+}
+
+
+.docs-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .docs-hero {
+    min-height: '60vh';
+    padding: '100px 20px 60px';
+  }
+  
+  .docs-hero h1 {
+    font-size: '2.4rem';
+  }
+  
+  .docs-hero p {
+    font-size: '1.15rem';
+  }
 }

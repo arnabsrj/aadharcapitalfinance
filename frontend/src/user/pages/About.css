@@ -189,6 +189,41 @@
   font-size: 1rem;
 }
 
+.about-hero {
+  position: relative;
+  min-height: 90vh;
+  color: white;
+  display: flex;
+  align-items: 'center';
+  overflow: hidden;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 80vh;
+    padding: 100px 20px 60px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.6rem;
+  }
+  
+  .about-hero .subtitle {
+    font-size: 1.15rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 .section-intro {
   text-align: center;
   font-size: 1.2rem;
@@ -396,6 +431,26 @@
   .about-hero h1 { font-size: 2.8rem; }
   .overview-section, .mv-section { padding: 80px 0; }
   .stats-row { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* Extra small devices (phones, max-width: 480px) */
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 1.7rem; /* Even smaller for very small screens */
+  }
+
+  .overview-section,
+  .mv-section {
+    padding: 50px 16px;
+  }
+
+  .stats-row {
+    gap: 1rem;
+  }
+
+  .stats-item h3 {
+    font-size: 1.6rem;
+  }
 }
 
 /* CONCISE TESTIMONIALS – CLEAN & IMPACTFUL */
@@ -644,7 +699,7 @@
 @media (max-width: 640px) {
   .grievance-btn-large {
     min-width: 280px;
-    font-size: 1.1rem !important;
+    font-size: 0.7rem !important;
     padding: 0.9rem 2rem !important;
   }
   .grievance-text-concise {
@@ -655,6 +710,38 @@
     padding: 0 1.5rem;
   }
 }
+/* Extra small phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .grievance-btn-large {
+    min-width: 240px;
+    font-size: 0.95rem !important;
+    padding: 1rem !important;
+  }
+
+  .grievance-text-concise {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+   .container {
+    padding: 0 1rem;
+    font-size: 0.6rem;
+  }
+
+  .container h1{
+    font-size: 0.8rem;
+  }
+  .container p{
+    font-size: 0.8rem;
+  }
+
+
+
+}
+
 
 .rbi-note {
   margin-top: 3rem;
@@ -955,6 +1042,8 @@
   flex-shrink: 0;
 }
 
+
+
 /* Mobile */
 @media (max-width: 768px) {
   .mv-grid-premium {
@@ -969,6 +1058,8 @@
     font-size: 2.4rem;
   }
 }
+
+
 
 
 /* COMPANY OVERVIEW – FINAL PREMIUM VERSION */
@@ -1297,3 +1388,6 @@
   .company-card { max-width: 100%; }
   .overview-subtitle { font-size: 1.2rem; padding: 0 1rem; }
 }
+
+
+

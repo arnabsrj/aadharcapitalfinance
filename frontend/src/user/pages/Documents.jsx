@@ -32,7 +32,7 @@ const Documents = () => {
      
 
       {/* Hero */}
-      <section className="docs-hero">
+      {/* <section className="docs-hero">
         <div className="container">
           <motion.div 
             className="hero-content"
@@ -44,7 +44,42 @@ const Documents = () => {
             <p>Get approved fast with minimal paperwork. Check what you need for Personal, Business, Home & Gold Loans.</p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
+
+      <section className="docs-hero">
+  {/* Background Image */}
+  <div className="hero-bg-image" style={{
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'url("https://images.pexels.com/photos/8292883/pexels-photo-8292883.jpeg")',  // ← TERA IMAGE PATH
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0
+  }} />
+
+  {/* Light Green Overlay — Image clear dikhega */}
+  <div className="hero-overlay" style={{
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(135deg, rgba(64,81,59,0.38), rgba(96,153,102,0.32))',
+    zIndex: 1
+  }} />
+
+  <div className="container">
+    <motion.div 
+      className="hero-content"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}
+    >
+      <h1>Documents & Eligibility Criteria</h1>
+      <p>Get approved fast with minimal paperwork. Check what you need for Personal, Business, Home & Gold Loans.</p>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Eligibility */}
       <section className="eligibility-section">

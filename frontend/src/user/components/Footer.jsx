@@ -67,8 +67,8 @@ const Footer = () => {
             <div className="contact-row">
               <Phone size={20} />
               <div>
-                <strong>Toll Free:</strong> <a href="tel:18001234567">1800 123 4567</a><br />
-                <strong>Support:</strong> <a href="tel:+919876543210">+91 98765 43210</a>
+                <strong>Toll Free:</strong> <a href="tel: 6207373101"> 6207373101</a><br />
+                <strong>Support:</strong> <a href="tel:+91 6207373101">+91  6207373101</a>
               </div>
             </div>
 
@@ -81,8 +81,8 @@ const Footer = () => {
               <MapPin size={20} />
               <div>
                 <strong>Corporate Office:</strong><br />
-                12th Floor, A-Wing, Mittal Tower,<br />
-                Nariman Point, Mumbai - 400021
+                Address 76, DEFENCE COLONY, HISAR,<br /> 
+                Haryana - 125001 India
               </div>
             </div>
 
