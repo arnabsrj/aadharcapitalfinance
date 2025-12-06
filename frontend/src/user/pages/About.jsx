@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { Lightbulb, PiggyBank, Headphones, ArrowRight, SearchIcon } from 'lucide-react';
 import { Shield, Award, Users, Target, HeartHandshake, Building2, CheckCircle, Quote } from 'lucide-react';
 import './About.css';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const containerVariants = {
@@ -15,6 +16,8 @@ const About = () => {
       transition: { staggerChildren: 0.15 }
     }
   };
+
+   const navigate = useNavigate();
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -102,7 +105,7 @@ const About = () => {
       <div className="hero-cta">
         <button 
           className="btn-primary" 
-          onClick={() => navigate('/apply')}
+           onClick={() => navigate('/apply')}
         >
           Apply for Loan <ArrowRight size={20} />
         </button>
