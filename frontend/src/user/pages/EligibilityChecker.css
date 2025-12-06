@@ -434,12 +434,12 @@ select, input[type="number"] {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .eligibility-hero {
-    min-height: 60vh;
+    min-height: 50vh;
     padding: 100px 20px 60px;
   }
   
   .eligibility-hero h1 {
-    font-size: 2.6rem;
+    font-size: 2.1rem;
   }
   
   .eligibility-hero p {

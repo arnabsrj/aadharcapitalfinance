@@ -201,7 +201,7 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .about-hero {
-    min-height: 80vh;
+    min-height: 60vh;
     padding: 100px 20px 60px;
   }
   

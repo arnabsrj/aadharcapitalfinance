@@ -194,7 +194,7 @@ h1 {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .hero {
-    min-height: 90vh;
+    min-height: 60vh;
     padding-top: 100px;
   }
   
@@ -207,7 +207,7 @@ h1 {
   }
   
   .tagline {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     padding: 0.5rem 1.2rem;
   }
   

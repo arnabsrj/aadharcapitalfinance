@@ -383,7 +383,7 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .contact-hero {
-    min-height: 60vh;
+    min-height: 50vh;
     padding: 100px 20px 60px;
   }
   
