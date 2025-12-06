@@ -94,7 +94,7 @@ const About = () => {
       initial={{ opacity: 0, y: 30 }} 
       whileInView={{ opacity: 1, y: 0 }} 
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.4 }}
       style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}
     >
       <div className="tagline">Trusted by Thousands</div>
