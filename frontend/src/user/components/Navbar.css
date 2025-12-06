@@ -347,3 +347,31 @@
   .mobile-toggle { display: block; color: white; font-size: 1.8rem; background: none; border: none; }
   .scrolled .mobile-toggle { color: #EDF1D6; }
 }
+
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* Mobile pe dikhega */
+@media (max-width: 992px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+}

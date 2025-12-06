@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';  // ← ADD useNavigate
 import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';  // ← YE ADD KAR DE
 import './Navbar.css';
 
 const Navbar = () => {
@@ -74,12 +75,12 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="mobile-toggle"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? '×' : 'Menu'}
-        </button>
+  className="mobile-toggle"
+  onClick={() => setMobileOpen(!mobileOpen)}
+  aria-label="Toggle menu"
+>
+  {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+</button>
       </div>
 
       {/* Mobile Menu */}
