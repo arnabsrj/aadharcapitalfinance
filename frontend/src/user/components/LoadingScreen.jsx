@@ -13,7 +13,7 @@ const LoadingScreen = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          ACP
+          A.C.F
         </motion.div>
 
         {/* Full Name - Sliding from Right to Left */}

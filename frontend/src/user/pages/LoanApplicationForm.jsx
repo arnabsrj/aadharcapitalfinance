@@ -698,6 +698,49 @@ case 5: // Documents
         Track Application Status
       </button>
     </div>
+
+    {/* WhatsApp Share Button */}
+<div style={{ marginTop: '25px' }}>
+ <a
+  href={`https://wa.me/917651915698?text=${encodeURIComponent(
+    `New Loan Application Received!\n\n` +
+    `Application ID: ${applicationId}\n` +
+    `Name: ${finalFormData?.fullName || formData.fullName}\n` +
+    `Phone: ${finalFormData?.phone || formData.phone}\n` +
+    `Email: ${finalFormData?.email || formData.email || 'Not Provided'}\n` +
+    `Loan Type: ${(finalFormData?.loanType || formData.loanType || 'Personal').charAt(0).toUpperCase() + (finalFormData?.loanType || formData.loanType || '').slice(1)} Loan\n` +
+    `Amount: ₹${Number(finalFormData?.loanAmount || formData.loanAmount || 0).toLocaleString('en-IN')}\n` +
+    `Tenure: ${finalFormData?.tenure || formData.tenure || 'N/A'} months\n\n` +
+    `Please verify and process this application.\n` +
+    `Thank you!`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    background: '#25D366',
+    color: 'white',
+    padding: '18px 50px',
+    borderRadius: '50px',
+    fontSize: '18px',
+    fontWeight: '700',
+    textDecoration: 'none',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '14px',
+    boxShadow: '0 10px 30px rgba(37,211,102,0.4)',
+    transition: 'all 0.3s ease',
+    width: '100%',
+    maxWidth: '340px',
+    justifyContent: 'center',
+    margin: '0 auto'
+  }}
+>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    {/* WhatsApp icon same */}
+  </svg>
+  Send Details on WhatsApp
+</a>
+</div>
   </div>
 </div>
         );
