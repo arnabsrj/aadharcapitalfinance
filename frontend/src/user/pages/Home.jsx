@@ -22,7 +22,14 @@ import {
   Clock,
   IndianRupee,
   TrainIcon,
-  SearchIcon
+  SearchIcon,
+  Percent,
+  Calendar,
+  FileText,
+  AlertCircle,
+  Eye,
+  Smartphone,
+  BadgeCheck
 } from 'lucide-react';
 
 
@@ -337,7 +344,123 @@ const coreServices = [
       </section>
 
       
-   
+
+      {/* Disclosure + Why Choose Section – 100% As Per Your Images */}
+<section className="disclosure-premium-section">
+  <div className="container">
+    <div className="disclosure-premium-grid">
+
+      {/* Left: Personal Loan Disclosure */}
+      <motion.div 
+        className="disclosure-premium-card"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2>Personal Loan Disclosure – <span style={{color: '#609966'}}>Aadhar Capital</span></h2>
+
+        <div className="info-block">
+          <span className="icon-wrapper"><Percent size={22} /></span>
+          <div>
+            <strong>Interest Rate:</strong><br/>
+            Annual interest starts at 7.99% p.a. and can go up to 12% p.a. based on credit profile.
+          </div>
+        </div>
+
+        <div className="info-block">
+          <span className="icon-wrapper"><ShieldCheck size={22} /></span>
+          <div>
+            <strong>Eligibility:</strong><br/>
+            Loan approval requires full KYC and income validation.
+          </div>
+        </div>
+
+        <div className="info-block">
+          <span className="icon-wrapper"><Calendar size={22} /></span>
+          <div>
+            <strong>APR Details:</strong><br/>
+            Valid from 01 Jan 2024 – 31 Dec 2025<br/>
+            <span style={{marginLeft: '2.8rem', display: 'block', marginTop: '8px'}}>
+              Min APR: 7.9%<br/>
+              Max APR: 12%
+            </span>
+            <small style={{marginLeft: '2.8rem', display: 'block', marginTop: '8px'}}>
+              Includes interest, processing fee, and standard loan costs.
+            </small>
+          </div>
+        </div>
+
+        <div className="info-block">
+          <span className="icon-wrapper"><Clock size={22} /></span>
+          <div>
+            <strong>Repayment Terms:</strong><br/>
+            Tenure: 12 to 120 months<br/>
+            <span style={{color: '#e74c3c', fontWeight: 'bold'}}>*T&C Apply</span>
+          </div>
+        </div>
+
+        <div className="example-block">
+          <span className="icon-wrapper example"><Calculator size={24} /></span>
+          <div>
+            <strong>Representative Example:</strong><br/>
+            ₹1,00,000 loan at 7.9% p.a. for 24 months:<br/><br/>
+            EMI ≈ ₹4,543/month<br/>
+            Interest ≈ ₹8,242<br/>
+            <strong>Total Repayment ≈ ₹1,08,242</strong>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Right: Why Choose Aadhar Capital */}
+      <motion.div 
+        className="disclosure-premium-card"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2>Why Choose Aadhar Capital?</h2>
+
+        <ul className="why-list">
+          <li>
+            <span className="icon-wrap"><IndianRupee size={20} /> </span>
+            
+          Loan Range: ₹50,000 – ₹20,00,000</li>
+          <li>
+            <span className="icon-wrap"><Percent size={20} /> </span>
+            
+             Interest Range: 7.9% – 12% p.a.</li>
+          <li>
+             <span className="icon-wrap"><Calendar size={20} />  </span>
+            
+            Tenure: 12 months to 10 years</li>
+          <li>
+             <span className="icon-wrap"><FileText size={20} />  </span>
+            
+            Processing Fee: 2% of loan</li>
+          <li>
+             <span className="icon-wrap"><AlertCircle size={20} /></span>
+              EMI Bounce: ₹590 per bounce</li>
+          <li>
+             <span className="icon-wrap"><CheckCircle size={20} className="highlight" /> </span>
+             
+             No Pre-Closure Charges</li>
+          <li>
+             <span className="icon-wrap"> <Eye size={20} className="highlight" /> </span>
+             Transparent APR Disclosures</li>
+          <li>
+             <span className="icon-wrap"><Smartphone size={20} className="highlight" /></span>
+              100% Digital & Paperless</li>
+          <li>
+             <span className="icon-wrap"><BadgeCheck size={22} className="highlight" /> </span>
+             Trusted NBFC since 2017 (Navi Mumbai)</li>
+        </ul>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
 
 
@@ -400,14 +523,14 @@ const coreServices = [
   Apply Now – Get Funds in 24 Hours
 </button>
 
-        <a 
-          href="https://wa.me/916207373101?text=Hi! I want to apply for a loan"
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="btn-whatsapp"
-        >
-          Apply via WhatsApp
-        </a>
+       <a 
+  href="https://wa.me/917992008145?text=Hi! I want to apply for a loan"
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="btn-whatsapp"
+>
+  Apply via WhatsApp
+</a>
       </motion.div>
 
       {/* Trust Line */}

@@ -67,8 +67,8 @@ const Footer = () => {
             <div className="contact-row">
               <Phone size={20} />
               <div>
-                <strong>Toll Free:</strong> <a href="tel: 6207373101"> 6207373101</a><br />
-                <strong>Support:</strong> <a href="tel:+91 6207373101">+91  6207373101</a>
+                <strong>Toll Free:</strong> <a href="tel:  7992008145">  7992008145</a><br />
+                <strong>Support:</strong> <a href="tel:+91  7992008145">+91   7992008145</a>
               </div>
             </div>
 

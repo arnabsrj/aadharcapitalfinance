@@ -780,3 +780,233 @@ h1 {
   }
   .trust-line { flex-direction: column; gap: 0.8rem; }
 }
+
+
+
+/* PREMIUM DISCLOSURE + WHY CHOOSE – Bank-Level Design */
+.disclosure-premium-section {
+  padding: 140px 20px;
+  background: linear-gradient(135deg, #f9fcf7 0%, #f0f8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.disclosure-premium-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(157,192,139,0.08), transparent 50%);
+  z-index: 0;
+}
+
+.disclosure-premium-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards */
+.disclosure-premium-card {
+  background: white;
+  border-radius: 36px;
+  padding: 3.8rem 3.2rem;
+  box-shadow: 0 30px 80px rgba(64,81,59,0.14);
+  border: 1px solid #e8f5e8;
+  position: relative;
+  overflow: hidden;
+}
+
+.disclosure-premium-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, #9DC08B, #609966);
+}
+
+/* Titles */
+.disclosure-premium-card h2 {
+  font-size: 2.9rem;
+  font-weight: 900;
+  color: #40513B;
+  margin-bottom: 2.5rem;
+  line-height: 1.15;
+  background: linear-gradient(135deg, #40513B, #609966);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Left Card – Disclosure */
+.info-block, .example-block {
+  margin-bottom: 2.2rem;
+  font-size: 1.18rem;
+  line-height: 1.8;
+  color: #2d3748;
+}
+
+.info-block strong {
+  color: #40513B;
+  font-weight: 800;
+}
+
+.example-block {
+  background: linear-gradient(135deg, #f8fcf8, #f0f8f0);
+  padding: 2.2rem;
+  border-radius: 24px;
+  border-left: 7px solid #9DC08B;
+  font-weight: 600;
+}
+
+/* Right Card – Why Choose */
+.why-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 2.9;
+}
+
+.why-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px dashed #d1e7d1;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.why-list li:last-child { border: none; }
+
+.why-list li:hover {
+  background: rgba(157,192,139,0.06);
+  padding-left: 0.5rem;
+  border-radius: 12px;
+}
+
+/* Premium Green Check Icon */
+/* .why-list li::before {
+  content: '';
+  position: static;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #9DC08B, #81c784);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 25px rgba(157,192,139,0.4);
+} */
+
+.why-list li::after {
+  content: "Check";
+  color: white;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+/* Responsive – Clean & Fast */
+@media (max-width: 992px) {
+  .disclosure-premium-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .disclosure-premium-card h2 { font-size: 2.3rem; }
+}
+
+@media (max-width: 768px) {
+  .disclosure-premium-section { padding: 100px 20px; }
+  .disclosure-premium-card { padding: 3rem 2rem; border-radius: 28px; }
+  .disclosure-premium-card h2 { font-size: 2rem; }
+  .why-list { font-size: 1.15rem; line-height: 2.4; }
+  .why-list li::before { width: 40px; height: 40px; }
+}
+
+
+.info-block, .example-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.icon-wrapper {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #9DC08B, #81c784);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(157,192,139,0.4);
+}
+
+.icon-wrapper.example {
+  background: linear-gradient(135deg, #40513B, #609966);
+}
+
+.why-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  font-size: 1.1rem;
+  border-bottom: 1px dashed #e0e8db;
+}
+
+.why-list li.highlight svg {
+  color: #27ae60;
+}
+
+.why-list li svg {
+  color: #40513B;
+  flex-shrink: 0;
+}
+
+/* WHY CHOOSE LIST – GREEN CIRCLE WITH ICON INSIDE */
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  font-size: 1.1rem;
+  border-bottom: 1px dashed #d1e7d1;
+}
+
+.why-list li:last-child {
+  border-bottom: none;
+}
+
+.icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #9DC08B, #81c784);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 10px 25px rgba(157,192,139,0.4);
+  transition: all 0.3s ease;
+}
+
+.icon-circle.highlight {
+  background: linear-gradient(135deg, #27ae60, #16a085);
+  transform: scale(1.2);
+}
+
+.why-list li:hover .icon-circle {
+  transform: scale(1.12);
+}
