@@ -279,7 +279,7 @@ const handleSubmit = async () => {
     );
 
     // DIRECT REDIRECT TO WHATSAPP — SUCCESS PAGE SKIP!
-   window.open(`https://wa.me/91 7992008145?text=${message}`, '_blank');
+   window.open(`https://wa.me/917992008145?text=${message}`, '_blank');
 
   // } catch (err) {
   //   console.error("Error:", err.response?.data || err);
