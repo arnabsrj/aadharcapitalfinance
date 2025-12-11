@@ -107,6 +107,12 @@ const handleFileChange = (e, field) => {
   const file = e.target.files[0];
   if (!file) return;
 
+  // MAX 2MB PER FILE — YE LINE ADD KAR
+  if (file.size > 2 * 1024 * 1024) {
+    toast.error('File size must be less than 2MB!', { icon: CrossCircle });
+    return;
+  }
+
   if (['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'].includes(file.type)) {
     setFiles(prev => ({ ...prev, [field]: file }));
     setFilePreviews(prev => ({ ...prev, [field]: URL.createObjectURL(file) }));
