@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { IndianRupee, Percent, Calendar, Calculator, Shield, CheckCircle } from 'lucide-react';
 import './EmiCalculator.css';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const EmiCalculator = () => {
   const [amount, setAmount] = useState(200000);
@@ -36,6 +37,14 @@ const EmiCalculator = () => {
 
   return (
     <>
+
+
+    <Helmet>
+  <title>Personal Loan EMI Calculator - Calculate Your Interest & Repayment</title>
+  <meta name="description" content="Use our free Personal Loan EMI Calculator to check your monthly installments. Enter loan amount and tenure to get instant results." />
+  <meta name="keywords" content="EMI calculator, personal loan calculator, loan interest calculator India" />
+  <link rel="canonical" href="https://www.aadharcapitalfinance.com/emi-calculator" />
+</Helmet>
 
       {/* Hero – Full Width, Bold & Clean */}
       {/* <section className="emi-hero-compact">
@@ -157,6 +166,34 @@ const EmiCalculator = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* --- SEO CONTENT SECTION START --- */}
+      <section className="seo-content-section" style={{ padding: '4rem 0', background: '#f9f9f9' }}>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '1.8rem', color: '#40513B', marginBottom: '1.5rem' }}>How to Use the Personal Loan EMI Calculator?</h2>
+          <p style={{ lineHeight: '1.6', color: '#555', marginBottom: '1.5rem' }}>
+            Planning your finances is the first step towards a stress-free loan experience. The 
+            <strong> Aadhar Capital Finance EMI Calculator</strong> helps you estimate your monthly installments 
+            before you apply. Simply enter your desired loan amount, the interest rate (starting from 11.99% p.a.), 
+            and the tenure (1 to 5 years).
+          </p>
+
+          <h3 style={{ fontSize: '1.4rem', color: '#40513B', marginTop: '2rem', marginBottom: '1rem' }}>Factors Affecting Your Personal Loan EMI</h3>
+          <ul style={{ paddingLeft: '20px', lineHeight: '1.8', color: '#555' }}>
+            <li><strong>Loan Amount (Principal):</strong> The total amount you borrow. Higher loans mean higher EMIs.</li>
+            <li><strong>Interest Rate:</strong> Your rate depends on your CIBIL score and income. We offer rates as low as 11.99% for salaried employees.</li>
+            <li><strong>Tenure:</strong> Choosing a longer tenure (e.g., 60 months) reduces your monthly EMI but increases the total interest payout.</li>
+          </ul>
+
+          <h3 style={{ fontSize: '1.4rem', color: '#40513B', marginTop: '2rem', marginBottom: '1rem' }}>Why Choose Aadhar Capital for Online Loans?</h3>
+          <p style={{ lineHeight: '1.6', color: '#555' }}>
+            We provide instant personal loans up to ₹5 Lakhs with minimal documentation. Our process is 100% online 
+            and requires only your <strong>Aadhar Card</strong> and <strong>PAN Card</strong> for KYC verification. 
+            Use our calculator today to find a repayment plan that fits your monthly budget.
+          </p>
+        </div>
+      </section>
+      {/* --- SEO CONTENT SECTION END --- */}
 
     
     </>

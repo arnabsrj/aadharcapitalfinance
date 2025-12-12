@@ -11,6 +11,7 @@ import { ArrowRight, CheckCircle, Upload, AlertCircle, Loader2, Clipboard } from
 import './LoanApplicationForm.css';
 import { copyToClipboard } from '../../utils/copyToClipboard';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const LoanApplicationForm = () => {
   const navigate = useNavigate();
@@ -317,6 +318,42 @@ const handleSubmit = async () => {
     setLoading(false);
   }
 };
+
+
+
+
+  // ---------- SEO-FRIENDLY HELMET ----------
+  const SEO = () => (
+    <Helmet>
+      <title>Apply Online for Personal & Business Loans | Aadhar Capital Finance</title>
+      <meta name="description" content="Fill our online loan application form for personal, business, home, or car loans. Fast approval with minimal documents. Apply now!" />
+      <meta name="keywords" content="online loan application, personal loan online, business loan form, instant loan approval, Aadhar Capital Finance" />
+      <link rel="canonical" href="https://www.aadharcapitalfinance.com/apply" />
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FinancialProduct",
+          "name": "Online Loan Application",
+          "description": "Apply online for personal, business, home, or car loans with Aadhar Capital Finance.",
+          "url": "https://www.aadharcapitalfinance.com/apply",
+          "brand": {
+            "@type": "Organization",
+            "name": "Aadhar Capital Finance",
+            "url": "https://www.aadharcapitalfinance.com"
+          },
+          "applicationCategory": "Loan",
+          "loanType": ["Personal", "Business", "Home", "Car"],
+          "provider": {
+            "@type": "FinancialService",
+            "name": "Aadhar Capital Finance"
+          }
+        })}
+      </script>
+    </Helmet>
+  );
+
+
 
   const renderStep = () => {
     switch (step) {
@@ -787,6 +824,9 @@ case 5: // Documents
 
   return (
     <>
+
+
+    <SEO />
      
       <section className="loan-form-section">
         <div className="container">

@@ -6,9 +6,12 @@ import { Toaster } from 'react-hot-toast';
 import { BrowserRouter } from "react-router-dom";
 import { AdminProvider } from "./context/AdminContext.jsx";  // ← ADD THIS
 import { CheckCircle, XCircle } from "lucide-react";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <HelmetProvider>
+
     <BrowserRouter>
       <AdminProvider>
         <App />
@@ -34,5 +37,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 />
       </AdminProvider>
     </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
+
 );

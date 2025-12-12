@@ -1,6 +1,6 @@
 // src/user/pages/Home.jsx
 import React, { useState, useMemo } from 'react';
-
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +29,8 @@ import {
   AlertCircle,
   Eye,
   Smartphone,
-  BadgeCheck
+  BadgeCheck,
+  Link
 } from 'lucide-react';
 
 
@@ -41,6 +42,148 @@ const Home = () => {
   const [tenureMonths, setTenureMonths] = useState(24);
   const [interestRate, setInterestRate] = useState(8.99);
   const navigate = useNavigate();  // ← ADD THIS LINE
+
+
+
+ 
+  // --- Structured Data (JSON-LD) ---
+  const domain = "https://www.aadharcapitalfinance.com";
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    name: "Aadhar Capital Finance",
+    url: domain,
+    logo: `${domain}/logo.png`, // replace with your hosted logo path
+    description:
+      "Aadhar Capital Finance offers instant personal loans on Aadhaar with minimal documents, fast approval and secure disbursal.",
+    telephone: "+91-7992008145",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Hisar",
+      addressRegion: "Haryana",
+      addressCountry: "IN"
+    },
+    sameAs: [
+      /* add your official social profiles */
+      `${domain}/`,
+      // "https://www.facebook.com/yourpage",
+      // "https://www.linkedin.com/company/yourcompany"
+    ]
+  };
+
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Instant Personal Loan on Aadhaar Card - Aadhar Capital Finance",
+    url: domain,
+    description:
+      "Apply online for instant personal loans using Aadhaar. Paperless KYC, competitive rates starting at 7.99% p.a., funds in 24 hours.",
+    inLanguage: "en-IN",
+    isPartOf: { "@type": "WebSite", name: "Aadhar Capital Finance", url: domain },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: domain },
+        { "@type": "ListItem", position: 2, name: "Personal Loans", item: `${domain}/#services` }
+      ]
+    }
+  };
+
+  const loanSchema = {
+    "@context": "https://schema.org",
+    "@type": "LoanOrCredit",
+    name: "Personal Loan - Aadhar Capital Finance",
+    description:
+      "Personal loans up to ₹20 Lakh with minimal documents. Competitive interest starting at 7.99% p.a. Flexible tenures up to 120 months.",
+    url: domain,
+    provider: { "@type": "FinancialService", name: "Aadhar Capital Finance", url: domain },
+    termsOfService: `${domain}/terms`,
+    eligibility: [
+      "Age 21-60 years",
+      "Minimum income for salaried applicants: ₹18,000/month",
+      "Self-employed: minimum turnover criteria applies"
+    ],
+    interestRate: "7.99-12.00% p.a."
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I apply for a personal loan with Aadhaar?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Apply online via our simple form, complete digital KYC with Aadhaar + PAN, upload bank statements and get fast approval. Funds can be disbursed within 24 hours on approval."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What is the minimum documentation required?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Basic documents include Aadhaar, PAN, proof of income (salary slips or bank statements), and a recent passport-sized photo. Requirements may vary by lender partner."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What interest rates can I expect?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Rates start from 7.99% p.a. up to 12% p.a. depending on credit profile, loan amount and tenure."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How long does verification take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Digital verification often completes in minutes. Manual checks may take up to 48 hours depending on document clarity and lender processing."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can I prepay my loan?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Yes—prepayment policies vary by product. Some loans allow zero prepayment charges after a specified period. Check your offer for details."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Is Aadhaar alone enough for loan disbursal?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Aadhaar helps with identity verification, but PAN and income proof are typically required for final disbursal."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How quickly will I receive funds?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "On approval, funds are usually credited to your bank account within 24 hours for digital disbursals."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Are there hidden charges?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "We disclose processing fees and standard charges upfront. Always review the loan agreement before accepting the offer."
+        }
+      }
+    ]
+  };
+
 
   // OPTIMIZED EMI CALCULATION WITH useMemo (no lag, 100% accurate)
   const { emi, totalInterest, totalPayback } = useMemo(() => {
@@ -174,7 +317,55 @@ const coreServices = [
 
   return (
     <>
-    
+
+
+     <Helmet>
+        {/* Primary SEO */}
+        <title>Instant Personal Loan on Aadhaar Card | Aadhar Capital Finance</title>
+        <meta
+          name="description"
+          content="Apply online for instant personal loans on Aadhaar. Paperless digital KYC, low rates from 7.99% p.a., fast approval and funds in 24 hours."
+        />
+        <meta
+          name="keywords"
+          content="Aadhar capital, Aadhar capital Finance, Online loan apply, Aadhar capital loan, Aadhar capital loan online apply, Online Finance, Online loan, Aadhar capital apply for loan online, Aadhar capital finance loan"
+        />
+        <link rel="canonical" href={domain + "/"} />
+        <meta name="robots" content="index,follow" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Instant Personal Loan on Aadhaar Card | Aadhar Capital Finance" />
+        <meta
+          property="og:description"
+          content="Paperless loans up to ₹20 Lakh — quick approval, minimal documents, funds in 24 hours. Apply online now."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={domain + "/"} />
+        <meta property="og:image" content={`${domain}/og-home.jpg`} />
+        <meta property="og:image:alt" content="Aadhar Capital Finance - instant loan on Aadhaar" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Instant Loan on Aadhaar Card - Aadhar Capital Finance" />
+        <meta name="twitter:description" content="Minimal docs, competitive rates from 7.99% p.a., funds in 24 hours." />
+        <meta name="twitter:image" content={`${domain}/og-home.jpg`} />
+
+        {/* JSON-LD structured data */}
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webpageSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(loanSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
+
+      {/* Hidden SEO-friendly image fallback (helps crawlers index hero visual) */}
+      <img
+        src="https://images.pexels.com/photos/7731323/pexels-photo-7731323.jpeg"
+        alt="Aadhar Capital Finance - apply for personal loan online with Aadhaar"
+        style={{ display: "none" }}
+        width="1200"
+        height="630"
+        loading="lazy"
+      />
 
       {/* Hero Section */}
       {/* <section className="hero">
@@ -249,6 +440,8 @@ const coreServices = [
     </motion.div>
   </div>
 </section>
+
+
 
 
 
@@ -454,7 +647,7 @@ const coreServices = [
               100% Digital & Paperless</li>
           <li>
              <span className="icon-wrap"><BadgeCheck size={22} className="highlight" /> </span>
-             Trusted NBFC since 2017 (Navi Mumbai)</li>
+             Trusted NBFC since 2017 (Haryana)</li>
         </ul>
       </motion.div>
 
@@ -462,6 +655,38 @@ const coreServices = [
   </div>
 </section>
 
+
+ {/* FAQ (visible) */}
+      <section className="faq-section" aria-labelledby="faq-heading">
+        <div className="container">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+          <div className="faq-grid">
+            <details>
+              <summary>How do I apply for a loan online?</summary>
+              <p>Click “Apply Now”, complete the online form, submit Aadhaar + PAN and bank statements and follow the steps for digital KYC.</p>
+            </details>
+
+            <details>
+              <summary>What documents do I need?</summary>
+              <p>Aadhaar, PAN, recent bank statements (3–6 months) and passport-size photo. Additional documents may be required for higher loan amounts.</p>
+            </details>
+
+            <details>
+              <summary>How fast is disbursal?</summary>
+              <p>On approval, digital disbursals usually hit your bank within 24 hours. Manual processes may take longer.</p>
+            </details>
+
+            <details>
+              <summary>Can I prepay my loan?</summary>
+              <p>Prepayment policies vary. Check offer terms — some loans allow zero prepayment charges after a set period.</p>
+            </details>
+          </div>
+
+          <p style={{ textAlign: "center", marginTop: "1.5rem" }}>
+            More questions? Visit our <button className="link-button" onClick={() => navigate("/documents-required")}>Documents page</button> or contact support at <a href="tel:+917992008145">+91 79920 08145</a>.
+          </p>
+        </div>
+      </section>
 
 
       {/* Final CTA */}

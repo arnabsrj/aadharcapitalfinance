@@ -1010,3 +1010,195 @@ h1 {
 .why-list li:hover .icon-circle {
   transform: scale(1.12);
 }
+
+
+
+/* ============================================= */
+/* FAQ SECTION – ONE BOX PER LINE (STACKED)      */
+/* ============================================= */
+
+.faq-section {
+  padding: 120px 0;
+  background: #f9fcf7;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(157,192,139,0.08), transparent 50%);
+  z-index: 0;
+}
+
+.faq-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+#faq-heading {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 4rem;
+  line-height: 1.2;
+}
+
+/* FAQ Grid – FORCE ONE COLUMN ONLY (stacked vertically) */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;                /* Only one column */
+  gap: 2rem;
+  max-width: 900px;                          /* Optional: narrower max-width for better readability */
+  margin: 0 auto;
+  padding: 0 1rem;                           /* Small side padding on mobile */
+}
+
+/* Accordion Card */
+.faq-grid details {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #e8f0e8;
+  transition: all 0.4s ease;
+}
+
+.faq-grid details:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Summary – Clean layout with toggle on right */
+.faq-grid summary {
+  padding: 1.8rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  user-select: none;
+}
+
+/* Hide default arrow */
+.faq-grid summary::-webkit-details-marker,
+.faq-grid summary::marker {
+  display: none;
+}
+
+/* Custom Toggle */
+.faq-grid summary::after {
+  content: '+';
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--secondary);
+  transition: transform 0.4s ease;
+  justify-self: end;
+  width: 40px;
+  text-align: center;
+}
+
+.faq-grid details[open] summary::after {
+  content: '−';
+}
+
+.faq-grid details[open] summary {
+  border-bottom: 1px solid #e8f0e8;
+}
+
+/* Answer */
+.faq-grid details p {
+  padding: 1.8rem 2rem;
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Bottom Text */
+.faq-section > .container > p {
+  text-align: center;
+  margin-top: 3.5rem;
+  font-size: 1.15rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* Link Button & Phone */
+.link-button {
+  background: none;
+  border: none;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: inherit;
+  text-decoration: none;
+  padding: 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.link-button:hover {
+  color: var(--primary);
+  border-bottom-color: var(--accent);
+}
+
+.faq-section a[href^="tel:"] {
+  color: var(--secondary);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.faq-section a[href^="tel:"]:hover {
+  color: var(--primary);
+  border-bottom-color: var(--accent);
+}
+
+/* Responsive Adjustments (still one per line) */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 100px 0;
+  }
+  
+  #faq-heading {
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+  }
+  
+  .faq-grid {
+    gap: 1.6rem;
+    max-width: 100%;               /* Full width on mobile */
+    padding: 0;
+  }
+  
+  .faq-grid summary {
+    padding: 1.6rem 1.8rem;
+    font-size: 1.18rem;
+    gap: 1rem;
+  }
+  
+  .faq-grid summary::after {
+    font-size: 2.2rem;
+    width: 36px;
+  }
+  
+  .faq-grid details p {
+    padding: 1.6rem 1.8rem;
+    font-size: 1rem;
+  }
+  
+  .faq-section > .container > p {
+    margin-top: 3rem;
+    padding: 0 1rem;
+    font-size: 1.05rem;
+  }
+}

@@ -8,6 +8,7 @@ console.log("RESEND KEY:", process.env.RESEND_API_KEY);
 import { configureCloudinary } from './utils/cloudinary.js';
 configureCloudinary();
 import express from 'express';
+import prerender from 'prerender-node';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
@@ -19,6 +20,20 @@ import userLoanRoutes from './routes/user/loanRoutes.js';
 import contactRoutes from './routes/user/contactRoutes.js';
 
 const app = express();
+
+// --- ADD THIS SECTION START ---
+// 1. Initialize Prerender
+
+// 2. Set your Token (Paste the token you copied from Step 1)
+prerender.set('prerenderToken', 'QaYY0ZNAYZa6JGCcdJ0M');
+
+// 3. Forward 'https' protocol (Crucial for secure sites)
+prerender.set('protocol', 'https');
+
+// 4. Activate the middleware
+app.use(prerender);
+// --- ADD THIS SECTION END ---
+
 
 console.log("=== SERVER FILE STARTED ===");
 

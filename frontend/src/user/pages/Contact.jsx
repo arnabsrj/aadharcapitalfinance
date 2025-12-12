@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import './Contact.css';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -49,19 +50,82 @@ const Contact = () => {
     "Other"
   ];
 
+
+  const domain = "https://www.aadharcapitalfinance.com";
+  const officialName = "Aadhar Capital Finance Private Limited";
+
+  // JSON-LD structured data
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    name: officialName,
+    url: domain,
+    logo: `${domain}/logo.png`,
+    telephone: "+91-18001234567",
+    address: { "@type": "PostalAddress", addressLocality: "Hisar", addressRegion: "Haryana", addressCountry: "IN" },
+    sameAs: ["https://www.facebook.com/yourpage", "https://www.linkedin.com/company/yourcompany"]
+  };
+
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Us - Aadhar Capital Finance",
+    url: `${domain}/contact`,
+    description: "Contact Aadhar Capital Finance for loan queries, office address, and customer support information."
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How can I contact Aadhar Capital Finance?",
+        acceptedAnswer: { "@type": "Answer", text: "You can contact us via email at support@aadharcapital.in, call 1800-123-4567, or fill out the contact form on our website." }
+      },
+      {
+        "@type": "Question",
+        name: "Where is your head office located?",
+        acceptedAnswer: { "@type": "Answer", text: "Our head offices are in Haryana and Maharashtra, serving customers across India." }
+      },
+      {
+        "@type": "Question",
+        name: "What are the working hours?",
+        acceptedAnswer: { "@type": "Answer", text: "Our customer support is available 24x7 via phone, email, and WhatsApp." }
+      }
+    ]
+  };
+
+
   return (
     <>
-      {/* Hero Section */}
-      {/* <motion.section className="contact-hero">
-        <div className="hero-overlay" />
-        <div className="container">
-          <motion.div className="hero-content">
-            <div className="tagline">We're Here to Help</div>
-            <h1>Contact Aadhar Capital Finance</h1>
-            <p>Have questions? Our team is ready to assist you 24×7</p>
-          </motion.div>
-        </div>
-      </motion.section> */}
+
+    <Helmet>
+        <title>Contact Aadhar Capital Finance — Customer Care & Office Address</title>
+        <meta name="description" content="Contact Aadhar Capital Finance for personal, business, home & gold loan queries. Visit our offices or call our 24x7 support." />
+        <meta name="keywords" content="Aadhar Capital Finance contact, customer support, loan queries, RBI registered NBFC" />
+        <link rel="canonical" href={`${domain}/contact`} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Aadhar Capital Finance — Trusted NBFC" />
+        <meta property="og:description" content="Reach out to Aadhar Capital Finance for any loan-related questions. 24x7 support available." />
+        <meta property="og:url" content={`${domain}/contact`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${domain}/og-contact.jpg`} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Aadhar Capital Finance — Trusted NBFC" />
+        <meta name="twitter:description" content="Reach out to Aadhar Capital Finance for personal or business loan support." />
+        <meta name="twitter:image" content={`${domain}/og-contact.jpg`} />
+
+        {/* JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(contactPageSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
+
+
 
 <motion.section className="contact-hero">
   {/* Background Image */}

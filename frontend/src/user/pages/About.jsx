@@ -7,6 +7,7 @@ import { Lightbulb, PiggyBank, Headphones, ArrowRight, SearchIcon } from 'lucide
 import { Shield, Award, Users, Target, HeartHandshake, Building2, CheckCircle, Quote } from 'lucide-react';
 import './About.css';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   const containerVariants = {
@@ -18,6 +19,76 @@ const About = () => {
   };
 
    const navigate = useNavigate();
+
+     const domain = "https://www.aadharcapitalfinance.com";
+  const officialName = "Aadhar Capital Finance Private Limited"; // Legal / SEO name - update if needed
+
+  // === JSON-LD Structured Data ===
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    name: officialName,
+    url: domain,
+    logo: `${domain}/logo.png`, // replace with your hosted logo
+    description:
+      "Aadhar Capital Finance Private Limited is an RBI-registered NBFC offering transparent, fast and secure personal, business, home and gold loans across India.",
+    telephone: "+91-7992008145",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Hisar",
+      addressRegion: "Haryana",
+      addressCountry: "IN"
+    },
+    sameAs: [
+      /* replace with your real profiles */
+      "https://www.facebook.com/yourpage",
+      "https://www.linkedin.com/company/yourcompany"
+    ]
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Aadhar Capital Finance",
+    url: `${domain}/about`,
+    description:
+      "Learn about Aadhar Capital Finance Private Limited — our mission, history, governance, and trust commitments as an RBI registered NBFC.",
+    isPartOf: { "@type": "WebSite", name: "Aadhar Capital Finance", url: domain },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: domain },
+        { "@type": "ListItem", position: 2, name: "About", item: `${domain}/about` }
+      ]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is Aadhar Capital Finance?",
+        acceptedAnswer: { "@type": "Answer", text: "Aadhar Capital Finance Private Limited is an RBI-registered NBFC offering retail and business loans across India with an emphasis on fast, transparent and digital lending." }
+      },
+      {
+        "@type": "Question",
+        name: "Is Aadhar Capital Finance regulated by RBI?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes. We are a Reserve Bank of India registered NBFC (Reg. No. B-14.02876)." }
+      },
+      {
+        "@type": "Question",
+        name: "Where is your head office?",
+        acceptedAnswer: { "@type": "Answer", text: "Our corporate headquarters is in Hisar, Haryana. We serve customers across India through our digital channels and partner network." }
+      },
+      {
+        "@type": "Question",
+        name: "What loan products do you offer?",
+        acceptedAnswer: { "@type": "Answer", text: "We offer personal loans, business loans, home loans, education loans and gold loans. Product availability and terms depend on credit assessment and partner NBFC policies." }
+      }
+    ]
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -65,6 +136,51 @@ const About = () => {
 
   return (
     <>
+
+    <Helmet>
+        <title>About Us — Aadhar Capital Finance Private Limited | Trusted NBFC</title>
+        <meta
+          name="description"
+          content="Discover Aadhar Capital Finance Private Limited — an RBI registered NBFC delivering fast, transparent and secure loans across India. Learn about our mission, team and trust commitments."
+        />
+        <meta
+          name="keywords"
+          content="Aadhar Capital Finance, Aadhar capital, NBFC, About Aadhar Capital, personal loan provider, RBI registered NBFC, financial services India"
+        />
+        <link rel="canonical" href={`${domain}/about`} />
+        <meta name="robots" content="index,follow" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="About Aadhar Capital Finance — Trusted RBI Registered NBFC" />
+        <meta property="og:description" content="Learn about our mission, compliance, and loan products. Aadhar Capital Finance — trusted NBFC for fast & transparent loans." />
+        <meta property="og:url" content={`${domain}/about`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${domain}/og-about.jpg`} />
+        <meta property="og:image:alt" content="Aadhar Capital Finance - About us" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Aadhar Capital Finance — Trusted NBFC" />
+        <meta name="twitter:description" content="RBI registered NBFC offering personal, business, home & gold loans with a focus on transparency and speed." />
+        <meta name="twitter:image" content={`${domain}/og-about.jpg`} />
+
+        {/* JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
+
+
+       {/* Hidden SEO-friendly hero image for crawlers */}
+      <img
+        src="https://images.pexels.com/photos/8293768/pexels-photo-8293768.jpeg"
+        alt="Aadhar Capital Finance team and headquarters"
+        style={{ display: "none" }}
+        loading="lazy"
+        width="1200"
+        height="630"
+      />
+      
     
 
       {/* Hero – Starts from Top */}

@@ -9,6 +9,7 @@ import {
   MessageCircle, Download, Smartphone, Info, ChevronDown
 } from 'lucide-react';
 import './EligibilityChecker.css';
+import { Helmet } from 'react-helmet-async';
 
 const EligibilityChecker = () => {
   const [step, setStep] = useState(1);
@@ -77,8 +78,78 @@ const EligibilityChecker = () => {
     window.location.href = `sms:?body=${encodeURIComponent(text)}`;
   };
 
+
+
+
+   // ---------- SEO Structured Data ----------
+  const SEO = () => (
+    <>
+      <Helmet>
+        <title>Check Loan Eligibility Online - Instant Approval | Aadhar Capital</title>
+        <meta name="description" content="Check your personal, business, home, or gold loan eligibility instantly. Get pre-approved in 30 seconds with Aadhar Capital Finance." />
+        <link rel="canonical" href="https://www.aadharcapitalfinance.com/eligibility-checker" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FinancialProduct",
+            "name": "Loan Eligibility Checker",
+            "description": "Check personal, business, home, or gold loan eligibility instantly with Aadhar Capital Finance.",
+            "url": "https://www.aadharcapitalfinance.com/eligibility-checker",
+            "brand": {
+              "@type": "Organization",
+              "name": "Aadhar Capital Finance",
+              "url": "https://www.aadharcapitalfinance.com"
+            },
+            "applicationCategory": "Loan",
+            "provider": {
+              "@type": "FinancialService",
+              "name": "Aadhar Capital Finance"
+            }
+          })}
+        </script>
+        {/* FAQ Structured Data for SEO Rich Snippets */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How is my CIBIL score calculated?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your CIBIL score is calculated based on payment history (35%), credit utilization (30%), credit history length (15%), credit mix (10%), and new applications (10%)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the minimum salary for loan eligibility?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A minimum monthly income of ₹25,000 is required to check eligibility."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How quickly can I get the approved loan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can get pre-approved instantly and receive funds in your bank within 4 hours after submitting required documents."
+                }
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
+    </>
+  );
+
   return (
     <>
+
+
+   <SEO />
+   
       <Navbar />
 
       {/* Hero */}
