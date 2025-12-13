@@ -149,7 +149,7 @@ const EligibilityChecker = () => {
 
 
    <SEO />
-   
+
       <Navbar />
 
       {/* Hero */}
@@ -359,9 +359,15 @@ const EligibilityChecker = () => {
                 </div>
 
                 <div className="action-buttons">
-                  <a href={`https://wa.me/919876543210?text=Hi! I'm pre-approved for ₹${format(result.maxAmount)}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp full-width">
-                    Apply via WhatsApp
-                  </a>
+                 <a 
+  href={`https://wa.me/917992008145?text=Hi! I'm pre-approved for ₹${format(result.maxAmount)}`} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="btn-whatsapp full-width"
+>
+  Apply via WhatsApp
+</a>
+
                   <button className="btn-primary full-width">Apply Online Now</button>
                   <button onClick={shareViaSMS} className="btn-outline full-width">
                     <Smartphone size={20} /> Share via SMS
