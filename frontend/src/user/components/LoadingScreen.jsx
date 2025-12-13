@@ -1,37 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './LoadingScreen.css'; // CSS file neeche diya hai
+import './LoadingScreen.css';
 
 const LoadingScreen = () => {
   return (
-    <div className="loading-screen">
+    <div
+      className="loading-screen"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading Aadhar Capital Finance Website"
+    >
       <div className="loading-content">
-        {/* ACP - Big Bold */}
+
+        {/* 🔹 Brand Initials (Visual Only) */}
         <motion.div
           className="logo-acp"
+          aria-hidden="true"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          A.C.F
+          ACF
         </motion.div>
 
-        {/* Full Name - Sliding from Right to Left */}
-       <motion.div
-  className="logo-text"
- initial={{ x: '100%', opacity: 0 }}  // ← '100%' parent ke relative hota hai
-  animate={{ x: 0, opacity: 1 }}
-  transition={{ duration: 1.4, ease: 'easeInOut' }}
->
-  Aadhar Capital Finance
-</motion.div>
+        {/* 🔹 SEO-Readable Brand Name */}
+        <motion.h1
+          className="logo-text"
+          initial={{ x: '100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.2, ease: 'easeInOut' }}
+        >
+          Aadhar Capital Finance
+        </motion.h1>
 
-        {/* Optional Subtle Loader */}
+        {/* 🔹 SEO Supporting Text */}
+        <p className="loading-tagline">
+          RBI Registered NBFC · Instant Online Loan Application
+        </p>
+
+        {/* 🔹 Subtle Loader */}
         <motion.div
           className="loader-bar"
+          aria-hidden="true"
           initial={{ width: 0 }}
           animate={{ width: '100%' }}
-          transition={{ duration: 2, ease: 'linear', repeat: Infinity }}
+          transition={{ duration: 1.8, ease: 'linear', repeat: Infinity }}
         />
       </div>
     </div>

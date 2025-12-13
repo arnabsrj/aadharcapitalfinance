@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Logo */}
       <Link to="/" className="logo">
-  <img src="/assets/logo.jpeg" alt="Aadhar Capital Finance Logo" className="logo-img" />
+  <img src="/assets/logo.jpeg" alt="Aadhar Capital Finance - Online Loan Apply" className="logo-img" />
   {/* <span className="logo-text">Aadhar Capital Finance</span> */}
 </Link>
 

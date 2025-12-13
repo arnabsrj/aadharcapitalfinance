@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block admin & private routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+Disallow: /apply/success
+Disallow: /apply/thank-you
+
+# Sitemap
+Sitemap: https://www.aadharcapitalfinance.com/sitemap.xml

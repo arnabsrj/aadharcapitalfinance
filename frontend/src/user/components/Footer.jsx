@@ -74,7 +74,9 @@ const Footer = () => {
 
             <div className="contact-row">
               <Mail size={20} />
-              <a href="mailto:support@aadharcapital.com" title="Email Support">support@aadharcapital.com</a>
+              <a href="mailto:support@aadharcapitalfinance.com
+" title="Email Support">support@aadharcapitalfinance.com
+</a>
             </div>
 
             <div className="contact-row">

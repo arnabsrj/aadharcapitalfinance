@@ -12,6 +12,7 @@ import {
   Calendar, IndianRupee, MessageCircle, Clipboard, Shield 
 } from 'lucide-react';
 import './TrackApplication.css';
+import { Helmet } from 'react-helmet-async';
 
 const TrackApplication = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -509,8 +510,87 @@ const TrackApplication = () => {
     });
   };
 
+
+  const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I track my loan application at Aadhar Capital Finance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can track your loan application by entering your Application ID or registered phone number on the Track Application page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is loan tracking secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Aadhar Capital Finance uses secure systems to protect your personal and financial information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What details are required to track my loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You only need your Application ID or registered mobile number to check your loan status."
+      }
+    }
+  ]
+};
+
+
   return (
     <>
+
+
+    <Helmet>
+  {/* Title */}
+  <title>
+    Track Loan Application Status Online | Aadhar Capital Finance
+  </title>
+
+  {/* Meta Description */}
+  <meta
+    name="description"
+    content="Track your Aadhar Capital Finance loan application online using Application ID or phone number. Get real-time loan status, approval updates, and download sanction letters securely."
+  />
+
+  {/* Keywords */}
+  <meta
+    name="keywords"
+    content="Track loan application, Aadhar Capital Finance loan status, loan application tracking, online loan status India, Aadhar Capital loan tracking"
+  />
+
+  {/* Canonical */}
+  <link
+    rel="canonical"
+    href="https://www.aadharcapitalfinance.com/track-application"
+  />
+
+  {/* Open Graph (Social & WhatsApp preview) */}
+  <meta property="og:title" content="Track Loan Application | Aadhar Capital Finance" />
+  <meta
+    property="og:description"
+    content="Check real-time status of your loan application at Aadhar Capital Finance. Secure, fast and RBI-regulated NBFC."
+  />
+  <meta property="og:url" content="https://www.aadharcapitalfinance.com/track-application" />
+  <meta property="og:type" content="website" />
+
+  {/* Robots */}
+  <meta name="robots" content="index, follow" />
+
+
+
+  <script type="application/ld+json">
+  {JSON.stringify(faqSchema)}
+</script>
+
+</Helmet>
+
       {/* HERO SECTION - EXACT SAME AS ABOUT PAGE */}
       {/* <section className="track-hero">
         <div className="hero-overlay" />
@@ -805,6 +885,11 @@ const TrackApplication = () => {
           </div>
         </div>
       </section>
+
+      <p style={{ display: "none" }}>
+  Track your Aadhar Capital Finance loan application online. We are an RBI-regulated NBFC offering instant online loans, transparent approvals, and secure application tracking across India.
+</p>
+
     </>
   );
 };
