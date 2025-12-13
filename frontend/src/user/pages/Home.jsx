@@ -326,6 +326,7 @@ const coreServices = [
           name="description"
           content="Apply online for instant personal loans on Aadhaar. Paperless digital KYC, low rates from 7.99% p.a., fast approval and funds in 24 hours."
         />
+         <link rel="canonical" href="https://www.aadharcapitalfinance.com/" />
         <meta
           name="keywords"
           content="Aadhar capital, Aadhar capital Finance, Online loan apply, Aadhar capital loan, Aadhar capital loan online apply, Online Finance, Online loan, Aadhar capital apply for loan online, Aadhar capital finance loan"
@@ -351,6 +352,22 @@ const coreServices = [
         <meta name="twitter:image" content={`${domain}/og-home.jpg`} />
 
         {/* JSON-LD structured data */}
+          <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Aadhar Capital Finance",
+      "url": "https://www.aadharcapitalfinance.com",
+      "logo": "https://www.aadharcapitalfinance.com/assets/logo.jpeg",
+      "sameAs": [
+        // "https://www.facebook.com/your-page",
+        // "https://www.linkedin.com/company/your-page",
+        // "https://twitter.com/your-page",
+        // "https://www.youtube.com/channel/your-channel"
+      ]
+    })}
+  </script>
+
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webpageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(loanSchema)}</script>
