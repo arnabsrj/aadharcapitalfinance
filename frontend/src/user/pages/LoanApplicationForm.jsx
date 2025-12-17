@@ -272,18 +272,63 @@ const handleSubmit = async () => {
 
 
     // PREPARE CLEAN WHATSAPP MESSAGE
+    // const message = encodeURIComponent(
+    //   `New Loan Application Received!\n\n` +
+    //   `Application ID: ${appId}\n` +
+    //   `Name: ${formData.fullName}\n` +
+    //   `Phone: ${formData.phone}\n` +
+    //   `Email: ${formData.email || 'Not Provided'}\n` +
+    //   `Loan Type: ${(formData.loanType || 'Personal').charAt(0).toUpperCase() + (formData.loanType || '').slice(1)} Loan\n` +
+    //   `Amount: ₹${Number(formData.loanAmount || 0).toLocaleString('en-IN')}\n` +
+    //   `Tenure: ${formData.tenure || 'N/A'} months\n\n` +
+    //   `Please verify and process this application.\n` +
+    //   `Thank you!`
+    // );
+
+
+
+    // PREPARE COMPREHENSIVE WHATSAPP MESSAGE
     const message = encodeURIComponent(
-      `New Loan Application Received!\n\n` +
-      `Application ID: ${appId}\n` +
-      `Name: ${formData.fullName}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Email: ${formData.email || 'Not Provided'}\n` +
-      `Loan Type: ${(formData.loanType || 'Personal').charAt(0).toUpperCase() + (formData.loanType || '').slice(1)} Loan\n` +
-      `Amount: ₹${Number(formData.loanAmount || 0).toLocaleString('en-IN')}\n` +
-      `Tenure: ${formData.tenure || 'N/A'} months\n\n` +
-      `Please verify and process this application.\n` +
-      `Thank you!`
+      `*New Loan Application Received!* 📄\n\n` +
+      `*Application ID:* ${appId}\n\n` +
+      
+      `*--- Personal Details ---*\n` +
+      ` *Name:* ${formData.fullName}\n` +
+      ` *Father:* ${formData.fatherName || 'N/A'}\n` +
+      ` *Phone:* ${formData.phone}\n` +
+      ` *Email:* ${formData.email || 'N/A'}\n` +
+      ` *Gender:* ${formData.gender}\n` +
+      ` *DOB:* ${formData.dob}\n` +
+      ` *Status:* ${formData.maritalStatus}\n` +
+      ` *Perm Address:* ${formData.permanentAddress}\n` +
+      ` *Curr Address:* ${formData.currentAddress || 'Same as Permanent'}\n\n` +
+
+      `*--- Identity Details ---*\n` +
+      ` *Aadhaar:* ${formData.aadhaarNumber}\n` +
+      ` *PAN:* ${formData.panNumber}\n\n` +
+
+      `*--- Bank Details ---*\n` +
+      ` *Bank:* ${formData.bankName}\n` +
+      ` *Acc No:* ${formData.accountNumber}\n` +
+      ` *IFSC:* ${formData.ifscCode}\n` +
+      ` *Type:* ${formData.accountType}\n\n` +
+
+      `*--- Employment Details ---*\n` +
+      ` *Emp Type:* ${formData.employmentType}\n` +
+      ` *Income:* ₹${formData.monthlyIncome}\n` +
+      ` *Company:* ${formData.companyName || 'N/A'}\n\n` +
+
+      `*--- Loan Details ---*\n` +
+      ` *Loan Type:* ${(formData.loanType || 'Personal').toUpperCase()}\n` +
+      ` *Amount:* ₹${Number(formData.loanAmount || 0).toLocaleString('en-IN')}\n` +
+      ` *Tenure:* ${formData.tenure} months\n` +
+      ` *Purpose:* ${formData.purpose || 'N/A'}\n\n` +
+
+      `Please verify and process this application.`
     );
+
+
+
 
     // DIRECT REDIRECT TO WHATSAPP — SUCCESS PAGE SKIP!
    window.open(`https://wa.me/917992008145?text=${message}`, '_blank');
@@ -774,7 +819,7 @@ case 5: // Documents
 
 {/* WhatsApp Share Button */}
 <div style={{ marginTop: '25px' }}>
- <a
+ {/* <a
   href={`https://wa.me/917992008145?text=${encodeURIComponent(
     `New Loan Application Received!\n\n` +
     `Application ID: ${applicationId}\n` +
@@ -786,6 +831,45 @@ case 5: // Documents
     `Tenure: ${finalFormData?.tenure || formData.tenure || 'N/A'} months\n\n` +
     `Please verify and process this application.\n` +
     `Thank you!`
+  )}`} */}
+  <a
+  href={`https://wa.me/917992008145?text=${encodeURIComponent(
+    `*New Loan Application Received!* 📄\n\n` +
+    `*Application ID:* ${applicationId}\n\n` +
+    
+    `*--- Personal Details ---*\n` +
+    ` *Name:* ${finalFormData?.fullName || formData.fullName}\n` +
+    ` *Father:* ${finalFormData?.fatherName || formData.fatherName || 'N/A'}\n` +
+    ` *Phone:* ${finalFormData?.phone || formData.phone}\n` +
+    ` *Email:* ${finalFormData?.email || formData.email || 'N/A'}\n` +
+    ` *Gender:* ${finalFormData?.gender || formData.gender}\n` +
+    ` *DOB:* ${finalFormData?.dob || formData.dob}\n` +
+    ` *Status:* ${finalFormData?.maritalStatus || formData.maritalStatus}\n` +
+    ` *Perm Address:* ${finalFormData?.permanentAddress || formData.permanentAddress}\n` +
+    ` *Curr Address:* ${finalFormData?.currentAddress || formData.currentAddress || 'Same as Permanent'}\n\n` +
+
+    `*--- Identity Details ---*\n` +
+    ` *Aadhaar:* ${finalFormData?.aadhaarNumber || formData.aadhaarNumber}\n` +
+    ` *PAN:* ${finalFormData?.panNumber || formData.panNumber}\n\n` +
+
+    `*--- Bank Details ---*\n` +
+    ` *Bank:* ${finalFormData?.bankName || formData.bankName}\n` +
+    ` *Acc No:* ${finalFormData?.accountNumber || formData.accountNumber}\n` +
+    ` *IFSC:* ${finalFormData?.ifscCode || formData.ifscCode}\n` +
+    ` *Type:* ${finalFormData?.accountType || formData.accountType}\n\n` +
+
+    `*--- Employment Details ---*\n` +
+    ` *Emp Type:* ${finalFormData?.employmentType || formData.employmentType}\n` +
+    ` *Income:* ₹${finalFormData?.monthlyIncome || formData.monthlyIncome}\n` +
+    ` *Company:* ${finalFormData?.companyName || formData.companyName || 'N/A'}\n\n` +
+
+    `*--- Loan Details ---*\n` +
+    ` *Loan Type:* ${(finalFormData?.loanType || formData.loanType || 'Personal').toUpperCase()}\n` +
+    ` *Amount:* ₹${Number(finalFormData?.loanAmount || formData.loanAmount || 0).toLocaleString('en-IN')}\n` +
+    ` *Tenure:* ${finalFormData?.tenure || formData.tenure} months\n` +
+    ` *Purpose:* ${finalFormData?.purpose || formData.purpose || 'N/A'}\n\n` +
+
+    `Please verify and process this application.`
   )}`}
   target="_blank"
   rel="noopener noreferrer"
